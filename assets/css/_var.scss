@@ -1,0 +1,51 @@
+@import "_fonts.scss";
+
+$yellow-dark: #f9ed35;
+$yellow-light: #fdf6cf;
+$green-dark: #229a87;
+$blue-dark: #86c9be;
+$blue-light: #def9f1;
+$dark: #282929;
+$grey-dark: #505857;
+$grey-light: #b7b7b7;
+
+%poppins-600 {
+  font-family: Poppins;
+  font-weight: 600;
+}
+
+%open-600 {
+  font-family: "Open Sans";
+  font-weight: 600;
+}
+
+%open-400 {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+%open-300 {
+  font-family: "Open Sans";
+  font-weight: 300;
+}
+
+%radius-6 {
+  border-radius: 6px;
+}
+
+%bg-i {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+%title-pattern {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    @extend %bg-i;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

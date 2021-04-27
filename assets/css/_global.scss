@@ -1,0 +1,75 @@
+@import "_var.scss";
+
+.m-btn-primary {
+  background: $yellow-dark;
+  border-radius: 6px;
+  @extend %poppins-600;
+  height: 44px;
+  padding: 12px 38px;
+  transition: all 0.5s;
+
+  &:hover,
+  &:active {
+    background-color: rgba(244, 220, 0, 1);
+  }
+}
+
+.section-btn {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 25px;
+    @extend %bg-i;
+  }
+
+  &::before {
+    background-image: url("../img/home/left-btn-arrow.svg");
+    left: -114px;
+    animation: left-arr 2s ease-in infinite;
+  }
+  &::after {
+    background-image: url("../img/home/right-btn-arrow.svg");
+    right: -114px;
+    animation: right-arr 2s ease-in infinite;
+  }
+}
+
+@keyframes left-arr {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+@keyframes right-arr {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.section-title {
+  @extend %poppins-600;
+  font-size: 22px;
+  text-align: center;
+  color: $green-dark;
+}
+
+.section-subtitle {
+  @extend %open-300;
+  font-size: 14px;
+  letter-spacing: -0.149625px;
+  color: $dark;
+}
