@@ -4,7 +4,7 @@
       <div
         class="container mx-auto px-4 xl:px-0 flex justify-between items-center"
       >
-        <div class="header_logo">
+        <div class="header__logo">
           <img src="@/assets/img/home/logo.svg" alt="mathrix-logo" />
         </div>
         <div

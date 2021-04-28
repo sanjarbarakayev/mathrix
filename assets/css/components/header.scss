@@ -89,14 +89,14 @@
 .register {
   &__modal .el-dialog {
     width: 660px !important;
-    height: 661px !important;
+    height: 681px !important;
     margin-top: 46px !important;
     padding: 0 155px;
   }
 
-  // &__modal .el-dialog__wrapper {
-  //   overflow: hidden;
-  // }
+  &__modal .el-dialog__wrapper {
+    overflow: hidden;
+  }
 
   &__modal .el-form-item__label {
     text-align: left;
@@ -118,6 +118,16 @@
   &__modal-logo img {
     margin: 0 auto;
     margin-bottom: 5px;
+  }
+
+  &__modal-subtitle span {
+    font-size: 14px;
+    letter-spacing: -0.149625px;
+    text-decoration-line: underline;
+    color: $green-dark;
+    text-decoration: underline;
+    cursor: pointer;
+    @extend %open-600;
   }
 
   &__modal-devider {
@@ -162,33 +172,39 @@
       position: relative;
     }
 
+    &:nth-of-type(2) span::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 18px;
+      background-image: url("../img/icons/facebook-mini-icon.svg");
+      @extend %bg-i;
+      left: -20px;
+      top: 2px;
+    }
+
     &:nth-of-type(3) {
       background-color: #4285f4;
       color: #fff;
     }
 
-    // &:nth-of-type(3) span {
-    //   position: relative;
-    // }
-    // &:nth-of-type(3) span::before {
-    //   content: "";
-    //   position: absolute;
-    //   width: 10px;
-    //   height: 18px;
-    //   background-image: url("../../img/icons/google-mini-icon.svg");
-    //   @extend %bg-i;
-    // }
+    &:nth-of-type(3) span {
+      position: relative;
+    }
+    &:nth-of-type(3) span::before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-image: url("../img/icons/google-mini-icon.svg");
+      @extend %bg-i;
+      left: -30px;
+      top: 2px;
+    }
   }
 }
 
-.register__modal-btn:nth-of-type(2) span::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 18px;
-  background: url("../../img/icons/facebook-mini-icon.svg");
-  @extend %bg-i;
-}
+
 
 .modal-title {
   @extend %poppins-600;
