@@ -51,10 +51,9 @@ import { directive } from "vue-awesome-swiper";
 export default {
   data: () => ({
     swiperOption: {
-      slidesPerView: 3,
+      slidesPerView: "auto",
       draggable: true,
       spaceBetween: 25,
-      slidesPerGroup: 3,
       loop: false,
       autoHeight: true,
       loopFillGroupWithBlank: true,
@@ -63,15 +62,9 @@ export default {
         clickable: true,
       },
       breakpoints: {
-        1024: {
-          slidesPerView: 3,
-        },
-        640: {
-          slidesPerView: 2,
-        },
-        320: {
-          slidesPerView: 1,
-        },
+        1024: {},
+        640: {},
+        320: {},
       },
     },
     witnessPatterns: [
