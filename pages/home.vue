@@ -1,6 +1,7 @@
 <template>
   <div relative>
     <Header />
+    <div class="line"></div>
     <section class="w-full top relative">
       <div class="top__reform flex items-center">
         <img src="@/assets/img/home/reform.svg" alt="reform" />
@@ -197,81 +198,9 @@
       </div>
     </section>
 
-    <section class="witness relative">
-      <div class="container mx-auto text-center">
-        <h2 class="witness__title section-title">They witness!</h2>
-        <p class="witness__subtitle section-subtitle">
-          What YouTube users say about us
-        </p>
-        <div class="witness__carousel">
-          <div
-            v-swiper="swiperOption"
-            class="w-5/6 ml-auto relative"
-            :loadtheme="false"
-          >
-            <div class="swiper-wrapper">
-              <div
-                class="swiper-slide witness__slide"
-                :key="banner"
-                v-for="banner in 10"
-              >
-                <div
-                  class="witness__carousel-header flex items-center text-left"
-                >
-                  <img
-                    class="witness__carousel-avatar rounded-full"
-                    src="@/assets/img/home/witness-avatar-1.jpg"
-                  />
-                  <p class="witness__carousel-title">Julio Rilc</p>
-                </div>
-                <p class="witness__carousel-text text-left">
-                  «My kids and I LOVE Mathrix! The courses are amazing, the
-                  teachers are interesting and experienced. Too bad we found out
-                  about Mathrix just now.»
-                </p>
-              </div>
-              <div class="swiper-pagination" slot="pagination"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="witness__patterns">
-        <img
-          v-for="witnessPattern in witnessPatterns"
-          :key="witnessPattern.id"
-          :src="witnessPattern.img"
-          alt="pattern"
-        />
-      </div>
-    </section>
+    <witness-carousel />
 
-    <section class="media relative">
-      <h2 class="media__title section-title">
-        We may have crossed paths in the media
-      </h2>
-      <div class="container mx-auto flex justify-between">
-        <div
-          class="media__item"
-          v-for="mediaItem of mediaItems"
-          :key="mediaItem.id"
-        >
-          <img
-            class="media__video-placeholder"
-            :src="mediaItem.img"
-            alt="mathric-video"
-          />
-          <p class="media__text">{{ mediaItem.title }}</p>
-        </div>
-      </div>
-      <div class="media__patterns">
-        <img
-          :src="mediaPattern.img"
-          alt="pattern"
-          v-for="mediaPattern in mediaPatterns"
-          :key="mediaPattern.id"
-        />
-      </div>
-    </section>
+    <methods-media />
 
     <section class="join">
       <div class="container mx-auto text-center">
@@ -315,176 +244,31 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container mx-auto flex justify-between">
-        <div>
-          <img
-            src="@/assets/img/home/logo-dark.png"
-            alt="mathrix-logo"
-            class="footer__logo"
-          />
-        </div>
-        <nav class="footer__menu-group flex justify-between">
-          <div>
-            <h4 class="footer__title">Classes</h4>
-            <ul class="footer__menu-list">
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">5th</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">4th</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">3th</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Second</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">First</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Terminal L</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Terminal ES</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Terminal S</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="footer__title">Subjects</h4>
-            <ul class="footer__menu-list">
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Mathematics</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Physical</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">SVT</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">French</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Chemistry</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Technology</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="footer__title">Company</h4>
-            <ul class="footer__menu-list">
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">About Us</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Contact</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Help</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Support community</a>
-              </li>
-              <li class="footer__menu-item">
-                <a class="footer__menu-link" href="#">Share your story</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="footer__follow">
-          <h4 class="footer__title"></h4>
-          <div class="flex">
-            <a href="#"
-              ><img src="@/assets/img/icons/facebook-icon.svg" alt="fb-icon"
-            /></a>
-            <a href="#"
-              ><img src="@/assets/img/icons/youtube-icon.svg" alt="yt-icon"
-            /></a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script>
-import { directive } from "vue-awesome-swiper";
 import Header from "@/components/Header";
+import WitnessCarousel from "@/components/WitnessCarousel";
+import MethodsMedia from "@/components/MethodsMedia";
+import Footer from "@/components/Footer";
+
 export default {
   data() {
     return {
-      swiperOption: {
-        slidesPerView: 3,
-        draggable: true,
-        spaceBetween: 25,
-        slidesPerGroup: 3,
-        loop: false,
-        autoHeight: true,
-        loopFillGroupWithBlank: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true
-        },
-        breakpoints: {
-          1024: {
-            slidesPerView: 3
-          },
-          640: {
-            slidesPerView: 2
-          },
-          320: {
-            slidesPerView: 1
-          }
-        }
-      },
-      witnessPatterns: [
-        { img: require("@/assets/img/patterns/small-cross-pattern.svg") },
-        { img: require("@/assets/img/patterns/small-circle-pattern.svg") },
-        { img: require("@/assets/img/patterns/small-cross-pattern.svg") },
-        { img: require("@/assets/img/patterns/small-circle-pattern.svg") }
-      ],
-      mediaItems: [
-        {
-          img: require("@/assets/img/home/video-placeholder-1.jpg"),
-          title: "We have official professors"
-        },
-        {
-          img: require("@/assets/img/home/video-placeholder-1.jpg"),
-          title: "We have official professors"
-        },
-        {
-          img: require("@/assets/img/home/video-placeholder-1.jpg"),
-          title: "We have official professors"
-        }
-      ],
-      mediaPatterns: [
-        { img: require("@/assets/img/patterns/small-cross-pattern.svg") },
-        { img: require("@/assets/img/patterns/small-circle-pattern.svg") },
-        { img: require("@/assets/img/patterns/small-circle-pattern.svg") },
-        { img: require("@/assets/img/patterns/disc.svg") },
-        { img: require("@/assets/img/patterns/disc.svg") },
-        { img: require("@/assets/img/patterns/disc.svg") },
-        { img: require("@/assets/img/patterns/dotted-circle.svg") }
-      ],
       appPatterns: [
         { img: require("@/assets/img/patterns/disc.svg") },
         { img: require("@/assets/img/patterns/disc.svg") },
-        { img: require("@/assets/img/patterns/disc.svg") }
-      ]
+        { img: require("@/assets/img/patterns/disc.svg") },
+      ],
     };
   },
   components: {
-    Header
+    Header,
+    WitnessCarousel,
+    MethodsMedia,
+    Footer,
   },
-  directives: {
-    swiper: directive
-  }
 };
 </script>

@@ -1,0 +1,101 @@
+.header {
+  padding: 10px 0;
+  // border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+  background: linear-gradient(261.11deg, #77caba 0%, #229a87 90.84%);
+  border-bottom-left-radius: 50px;
+
+  position: fixed;
+  width: 100%;
+
+  &__action {
+    padding: 7px 0;
+  }
+
+  &__action {
+    flex-basis: 75%;
+  }
+
+  &__search {
+    ::placeholder {
+      opacity: 1 !important;
+      color: #e9efee !important;
+      /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      opacity: 1 !important;
+      color: #e9efee !important;
+    }
+
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      opacity: 1 !important;
+      color: #e9efee !important;
+    }
+  }
+
+  &__search.el-input {
+    // width: 344px !important;
+  }
+
+  &__search .el-input__inner {
+    background: rgba(255, 255, 255, 0.2);
+    @extend %radius-6;
+    padding: 8px 12px 8px 45px;
+    font-size: 12px;
+    color: #e9efee !important;
+    border: none;
+  }
+
+  &__search .el-input__prefix {
+    color: #e9efee;
+  }
+
+  &__select {
+    width: 150px;
+    height: 40px;
+  }
+
+  &__select input.el-input__inner {
+    @extend %poppins-600;
+    font-size: 14px;
+    letter-spacing: -0.0142658px;
+    color: $dark;
+  }
+
+  .login-btn {
+    width: 150px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    @extend %poppins-600;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+
+    &:hover,
+    &:active {
+      background-color: #fff;
+      color: $green-dark;
+    }
+  }
+
+  select {
+    color: $dark;
+    font-size: 14px;
+    @extend %poppins-600;
+  }
+
+}
+
+//Media
+
+@media (max-width: 768px) {
+  .header {
+    __action {
+      flex-basis: 60%;
+    }
+  }
+}

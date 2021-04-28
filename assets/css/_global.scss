@@ -1,11 +1,19 @@
 @import "_var.scss";
 
+// Reset styles
+
+button:focus {
+  outline: 0;
+}
+
+// GLobal styles
+
 .m-btn-primary {
   background: $yellow-dark;
   border-radius: 6px;
   @extend %poppins-600;
-  height: 44px;
-  padding: 12px 38px;
+  height: 40px;
+  padding: 0px 38px;
   transition: all 0.5s;
 
   &:hover,
@@ -16,6 +24,7 @@
 
 .section-btn {
   position: relative;
+
   &::before,
   &::after {
     content: "";
@@ -30,6 +39,7 @@
     left: -114px;
     animation: left-arr 2s ease-in infinite;
   }
+
   &::after {
     background-image: url("../img/home/right-btn-arrow.svg");
     right: -114px;
@@ -38,19 +48,24 @@
 }
 
 @keyframes left-arr {
+
   0%,
   100% {
     transform: translateX(0px);
   }
+
   50% {
     transform: translateX(20px);
   }
 }
+
 @keyframes right-arr {
+
   0%,
   100% {
     transform: translateX(0px);
   }
+
   50% {
     transform: translateX(-20px);
   }
