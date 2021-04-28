@@ -16,6 +16,7 @@
   }
 
   &__search {
+    order: 1;
     ::placeholder {
       opacity: 1 !important;
       color: #e9efee !important;
@@ -35,6 +36,10 @@
     }
   }
 
+  &__search.el-input {
+    width: 344px;
+  }
+
   &__search .el-input__inner {
     background: rgba(255, 255, 255, 0.2);
     @extend %radius-6;
@@ -49,6 +54,7 @@
   }
 
   &__select {
+    order: 2;
     width: 150px;
     height: 40px;
   }
@@ -61,6 +67,7 @@
   }
 
   .login-btn {
+    order: 3;
     width: 150px;
     height: 40px;
     border: 1px solid #ffffff;
@@ -75,6 +82,10 @@
       background-color: #fff;
       color: $green-dark;
     }
+  }
+
+  .register-btn {
+    order: 4;
   }
 
   select {
@@ -204,8 +215,6 @@
   }
 }
 
-
-
 .modal-title {
   @extend %poppins-600;
   font-size: 22px;
@@ -227,10 +236,125 @@
 
 //Media
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .header {
-    __action {
-      flex-basis: 60%;
+    &__action {
+      flex-basis: 77%;
+    }
+
+    &__search.el-input {
+      width: 250px;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .header {
+    &__logo {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+    }
+    &__action {
+      flex-wrap: wrap;
+    }
+
+    &__search.el-input {
+      order: 4;
+      margin-top: 5px;
+    }
+
+    &__select {
+      order: 1;
+    }
+
+    .login-btn {
+      order: 2;
+      margin-left: 15px;
+    }
+
+    .register-btn {
+      order: 3;
+      margin-left: 8px;
+    }
+
+    &__action {
+      flex-basis: 68%;
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: 781px) {
+  .header {
+    &__search.el-input {
+      order: 3;
+      margin-top: 5px;
+      width: 40%;
+    }
+
+    &__select {
+      order: 4;
+      margin-top: 5px;
+      margin-left: 2%;
+      width: 40%;
+    }
+
+    .login-btn {
+      order: 1;
+      width: 40%;
+    }
+
+    .register-btn {
+      order: 2;
+      margin-left: 1%;
+      width: 40%;
+    }
+
+    &__action {
+      flex-basis: 71%;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    &__logo {
+      margin-bottom: 8px;
+    }
+
+    &__search.el-input {
+      display: none;
+    }
+
+    &__select {
+      display: none;
+    }
+    .register-btn {
+      margin-left: 3%;
+    }
+
+    &__action {
+      width: 80%;
+      justify-content: space-between;
+    }
+
+    .login-btn {
+      margin: 0;
+      width: 46%;
+    }
+
+    .register-btn {
+      margin: 0;
+      width: 46%;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .header {
+    &__action {
+      width: 95%;
     }
   }
 }

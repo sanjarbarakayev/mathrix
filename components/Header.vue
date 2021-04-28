@@ -2,23 +2,23 @@
   <div>
     <header class="header">
       <div
-        class="container mx-auto px-4 xl:px-0 flex justify-between items-center"
+        class="container mx-auto px-4 flex justify-between flex-col sm:flex-row items-center"
       >
         <div class="header__logo">
           <img src="@/assets/img/home/logo.svg" alt="mathrix-logo" />
         </div>
         <div
-          class="header__action grid gap-4 grid-cols-2 grid-rows-2 sm:grid-cols-3 lg:grid-cols-5 lg:grid-rows-1"
+          class="header__action flex justify-between items-center"
         >
           <el-input
-            class="header__search col-start-1 row-start-2 sm:col-start-2 sm:col-span-2 lg:col-start-1 lg:row-start-1"
+            class="header__search"
             placeholder="Find what interests you"
             prefix-icon="el-icon-search"
             v-model="search"
           >
           </el-input>
           <div
-            class="header__select col-start-2 row-start-2 sm:col-start-1 sm:row-start-1 lg:col-start-3"
+            class="header__select"
           >
             <el-select v-model="value" placeholder="Terminal ES">
               <el-option
@@ -32,7 +32,7 @@
           </div>
 
           <button class="header__btn login-btn">Log In</button>
-          <button class="m-btn-primary register-btn" @click="openRegisterModal">
+          <button class="header__btn m-btn-primary register-btn" @click="openRegisterModal">
             Registration
           </button>
         </div>
@@ -69,7 +69,7 @@
 
           <button
             class="m-btn-primary register__modal-btn"
-            @click="submitForm('ruleForm')"
+            @click.prevent="submitForm('ruleForm')"
           >
             Registration
           </button>
@@ -146,7 +146,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
         if (valid) {
-          alert("submit!");
+          this.$router.push("/register");
         } else {
           console.log("error submit!!");
           return false;

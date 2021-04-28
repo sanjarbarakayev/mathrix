@@ -7,7 +7,7 @@
         <img src="@/assets/img/home/reform.svg" alt="reform" />
         <p>Adapted to reforms</p>
       </div>
-      <div class="container mx-auto">
+      <div class="container mx-auto px-4">
         <div class="top__content flex justify-between relative">
           <div class="top__text">
             <h2 class="top__title">
