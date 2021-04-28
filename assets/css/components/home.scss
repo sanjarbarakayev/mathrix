@@ -631,6 +631,30 @@
   .top-img {
     display: none;
   }
+
+  .mac__patterns {
+    display: none;
+  }
+
+  .features {
+    height: auto;
+    &__items {
+      flex-wrap: wrap;
+      
+    }
+    &__item {
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+    &__item img {
+      width: 180px;
+      margin: 0 auto;
+    }
+
+    &__text {
+      width: 317px;
+    }
+  }
 }
 
 @media (max-width: 640px) {

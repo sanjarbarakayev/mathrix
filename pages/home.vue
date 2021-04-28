@@ -170,14 +170,14 @@
       <div class="container mx-auto text-center">
         <h2 class="features__title section-title">Why Mathrix works</h2>
         <div class="features__items flex justify-between w-full">
-          <div class="features-item">
+          <div class="features__item">
             <img
               class="features__img"
               src="@/assets/img/home/features-illustration-1.svg"
             />
             <p class="features__text">We have official professors</p>
           </div>
-          <div class="features-item">
+          <div class="features__item">
             <img
               class="features__img"
               src="@/assets/img/home/features-illustration-2.svg"
@@ -186,7 +186,7 @@
               We have everything to understand course
             </p>
           </div>
-          <div class="features-item">
+          <div class="features__item">
             <img
               class="features__img"
               src="@/assets/img/home/features-illustration-3.svg"
