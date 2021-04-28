@@ -96,6 +96,7 @@
   z-index: 10;
   top: 150px;
   right: 35px;
+  width: 50%;
 }
 
 // Mac Screen Section
@@ -244,7 +245,6 @@
     font-size: 16px;
     letter-spacing: -0.149625px;
     color: $dark;
-
   }
 
   &__items {
@@ -620,7 +620,75 @@
   }
 }
 
-// git init
-.sem {
-  font-size: 14px;
+//Media
+
+@media (max-width: 1024px) {
+  .top-img {
+    right: 8px;
+  }
+}
+@media (max-width: 767px) {
+  .top-img {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .top {
+    &__content {
+      display: block;
+    }
+
+    &__btn-group {
+      text-align: center;
+    }
+    &__btn-group button {
+      margin: 8px;
+    }
+    &__title {
+      display: block;
+      width: 100%;
+    }
+    &__subtitle {
+      display: block;
+      width: 100%;
+    }
+    &__pattern_1 {
+      top: -139px;
+      left: 257px;
+    }
+
+    &__pattern_2 {
+      bottom: -285px;
+      left: 250px;
+    }
+    &__title::before {
+      bottom: 65px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .top {
+    &__title {
+      font-size: 28px;
+    }
+    &__subtitle {
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    &__reform {
+      margin-bottom: 65px;
+    }
+  }
+}
+
+@media (max-width: 423px) {
+  .top {
+    &__title::before {
+      bottom: 85px;
+    }
+  }
 }
