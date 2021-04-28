@@ -3,7 +3,7 @@
     <h2 class="media__title section-title">
       We may have crossed paths in the media
     </h2>
-    <div class="container mx-auto flex justify-between">
+    <div class="container mx-auto flex justify-between flex-wrap lg:flex-nowrap">
       <div
         class="media__item"
         v-for="mediaItem of mediaItems"

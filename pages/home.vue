@@ -215,7 +215,7 @@
     </section>
 
     <section class="app relative">
-      <div class="container mx-auto text-center">
+      <div class="container mx-auto text-center relative z-10">
         <h2 class="app__title section-title">Use the app to review anywhere</h2>
         <div class="flex justify-center">
           <a class="app__btn" href="#">

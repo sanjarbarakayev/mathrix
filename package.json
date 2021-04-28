@@ -16,6 +16,7 @@
     "swiper": "^6.5.8",
     "vue-awesome-swiper": "^4.1.1",
     "vue-stepper": "^1.4.2",
+    "vue-video-player": "^5.0.2",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "fibers": "^5.0.0",
     "postcss": "^8.2.8",
     "sass": "^1.32.11",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "video.js": "^7.11.8"
   }
 }

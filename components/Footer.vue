@@ -1,15 +1,15 @@
 <template>
   <footer class="footer">
-    <div class="container mx-auto flex justify-between">
+    <div class="container mx-auto flex sm:justify-between justify-center flex-wrap sm:flex-nowrap px-4 order-1 sm:order-1">
       <div>
         <img
           src="@/assets/img/home/logo-dark.svg"
           alt="mathrix-logo"
-          class="footer__logo"
+          class="footer__logo mr-5 sm:mr-0 mb-8 sm:mb-0"
         />
       </div>
-      <nav class="footer__menu-group flex justify-between">
-        <div>
+      <nav class="footer__menu-group flex justify-between order-3 sm:order-2 mt-10 sm:mt-0 flex-wrap sm:flex-nowrap">
+        <div class="mb-8 sm:mb-0">
           <h4 class="footer__title">Classes</h4>
           <ul class="footer__menu-list">
             <li class="footer__menu-item">
@@ -38,7 +38,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="mb-8 sm:mb-0">
           <h4 class="footer__title">Subjects</h4>
           <ul class="footer__menu-list">
             <li class="footer__menu-item">
@@ -82,8 +82,8 @@
           </ul>
         </div>
       </nav>
-      <div class="footer__follow">
-        <h4 class="footer__title"></h4>
+      <div class="footer__follow order-2 sm:order-3  ml-5 sm:ml-0">
+        <h4 class="footer__title">Follow Us</h4>
         <div class="flex">
           <a href="#"
             ><img src="@/assets/img/icons/facebook-icon.svg" alt="fb-icon"
