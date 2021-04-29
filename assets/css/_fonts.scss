@@ -64,6 +64,17 @@
 
 @font-face {
   font-family: "Poppins";
+  src: url("../fonts/Poppins/Poppins-Medium.eot");
+  src: local("Poppins Medium"), local("Poppins-Medium"),
+    url("../fonts/Poppins/Poppins-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/Poppins/Poppins-Medium.woff") format("woff"),
+    url("../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
   src: url("../fonts/Poppins/Poppins-SemiBoldItalic.eot");
   src: local("Poppins SemiBold Italic"), local("Poppins-SemiBoldItalic"),
     url("../fonts/Poppins/Poppins-SemiBoldItalic.eot?#iefix")
