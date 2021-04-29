@@ -2,7 +2,11 @@
 @import "_global.scss";
 @import "_var.scss";
 
-//Components
+//Vue-TagsInput
 
+@import "~/node_modules/@voerro/vue-tagsinput/dist/style.css";
+
+//Components
 @import "components/header.scss";
 @import "components/home.scss";
+@import "components/auth.scss";
