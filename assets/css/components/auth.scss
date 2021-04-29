@@ -1,0 +1,206 @@
+@import "../var.scss";
+
+.register {
+  height: 100vh;
+  padding: 0px 0px 40px;
+
+  &__header {
+    padding: 23px 0 12px;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    @extend %poppins-600;
+    font-size: 22px;
+    line-height: 38px;
+    letter-spacing: -0.762769px;
+    color: $green-dark;
+  }
+
+  &__progress {
+    padding-top: 35px;
+    border-top: 1px solid rgba(54, 165, 147, 0.2);
+  }
+
+  .el-progress-bar__outer {
+    background-color: #fdf6cf;
+    height: 10px;
+  }
+
+  &__progress-text {
+    text-align: right;
+    padding-right: 24px;
+    @extend %open-600;
+    font-size: 14px;
+    letter-spacing: -0.149625px;
+    color: $dark;
+  }
+
+  .el-progress__text {
+    display: none;
+  }
+
+  .el-form--label-top .el-form-item__label {
+    display: block;
+  }
+
+  &__step {
+    width: 800px;
+    align-self: center;
+  }
+
+  .m-btn-primary {
+    width: 200px;
+  }
+}
+
+//Step One
+
+.step-one {
+  width: 500px;
+
+  label {
+    display: block;
+    text-align: left;
+    @extend %poppins-600;
+    font-size: 14px;
+    letter-spacing: -0.0142658px;
+    color: $dark;
+    margin-bottom: 10px;
+  }
+
+  .el-progress__text {
+    display: none;
+  }
+}
+
+//Step Two
+
+.grade {
+  margin-bottom: 60px;
+  margin-top: -30px;
+
+  &__title {
+    @extend %poppins-500;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $blue-dark;
+    text-align: left;
+    margin-bottom: 22px;
+  }
+
+  &__items {
+    grid-gap: 22px;
+  }
+
+  &__item {
+    width: 170px;
+    height: 70px;
+    background: #ffffff;
+    box-shadow: 5px 0px 18px rgba(185, 213, 208, 0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @extend %poppins-600;
+    font-size: 16px;
+    color: #505857;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $green-dark;
+      color: #fff;
+    }
+  }
+}
+
+.college {
+  .el-form-item__label {
+    @extend %poppins-500;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $blue-dark;
+    text-align: left;
+    text-align-last: left;
+  }
+
+  .el-input__inner {
+    height: 56px;
+    @extend %open-400;
+    font-size: 14px;
+    letter-spacing: -0.149625px;
+    color: $dark;
+  }
+  .el-input__inner {
+    border-right: none;
+  }
+  .el-input-group__append,
+  .el-input-group__prepend {
+    background-color: transparent;
+  }
+
+  .el-input.is-active .el-input__inner,
+  .el-input__inner:focus {
+    border-color: #dcdfe6;
+  }
+}
+
+.tags-input-wrapper-default {
+  height: 56px;
+}
+
+.active-grade {
+  background-color: $green-dark;
+  color: #fff;
+}
+
+.tags-input-typeahead-item-default {
+  background-color: transparent !important;
+}
+
+.typeahead-dropdown {
+  margin-top: 14px;
+  background: #ffffff;
+  box-shadow: 5px 0px 30px rgba(185, 213, 208, 0.5);
+  border-radius: 10px;
+  padding: 26px 44px;
+}
+
+.typeahead-dropdown li {
+  background-color: #fff !important;
+  @extend %open-400;
+  font-size: 14px;
+  letter-spacing: -0.149625px;
+  color: $dark;
+  text-align-last: left;
+  margin-bottom: 17px;
+}
+
+.typeahead-dropdown li:first-child {
+  display: none;
+}
+
+.tags-input-badge-selected-default {
+  background: #e6f8f2;
+  border-radius: 6px;
+  @extend %open-400;
+  font-size: 14px;
+  letter-spacing: -0.149625px;
+  color: #229a87;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-input-remove {
+  top: 1em;
+}
+
+.tags-input-wrapper-default.active {
+  border: 1px solid $grey-dark;
+  box-shadow: none;
+  outline: 0 none;
+}
