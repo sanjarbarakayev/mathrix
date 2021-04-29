@@ -1,7 +1,7 @@
 <template>
   <section class="step-two">
     <div class="grade">
-      <h3 class="grade__title">Coose the grade</h3>
+      <h3 class="grade__title step-title">Coose the grade</h3>
       <div class="grade__items grid grid-cols-4 grid-rows-2">
         <div
           class="grade__item"
@@ -52,7 +52,8 @@ export default {
       { title: "Terminal L" },
       { title: "Terminal S" }
     ],
-    searchCollege: ""
+    searchCollege: "",
+    selectedTags: ""
   }),
   methods: {
     chooseGrade(e) {

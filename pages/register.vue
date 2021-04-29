@@ -26,6 +26,7 @@
     <div class="register__step">
       <step-one v-show="activeStep == 1" />
       <step-two v-show="activeStep == 2" />
+      <step-three v-show="activeStep == 3" />
     </div>
     <div class="register__next-step">
       <button class="m-btn-primary" @click="increase">Next</button>
@@ -36,10 +37,11 @@
 <script>
 import StepOne from "@/components/Register/StepOne";
 import StepTwo from "@/components/Register/StepTwo";
+import StepThree from "@/components/Register/StepThree";
 
 export default {
   layout: "auth",
-  components: { StepOne, StepTwo },
+  components: { StepOne, StepTwo, StepThree },
   data() {
     return {
       activeStep: 1,
