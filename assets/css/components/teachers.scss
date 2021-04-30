@@ -12,17 +12,20 @@
     font-size: 32px;
     letter-spacing: -0.762769px;
     color: $green-dark;
-    position: relative;
     margin-bottom: 21px;
+    position: relative;
+    display: inline-block;
   }
 
   &__title::after {
+    content: "";
     position: absolute;
-    background-image: url("../img/patterns/zig-pattern.svg");
+    background-image: url("../img/patterns/zig2-pattern.svg");
     @extend %bg-i;
-    transform: rotate(180deg);
     right: 0;
-    top: 25px;
+    top: -18px;
+    width: 135px;
+    height: 122px;
   }
 
   &__subtitle {
@@ -52,6 +55,7 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
+
   &__subject-img {
     background-image: url("../img/bg/subject-bg.svg");
     @extend %bg-i;
@@ -59,21 +63,25 @@
     padding: 15px 30px;
     margin-top: -59px;
   }
+
   &__text {
     padding: 0 15px 19px;
   }
+
   &__name {
     @extend %poppins-600;
     font-size: 16px;
     letter-spacing: -0.762769px;
     color: $dark;
   }
+
   &__subject {
     @extend %poppins-400;
     font-size: 14px;
     letter-spacing: -0.0142658px;
     color: #b7c2bf;
   }
+
   &__descr {
     @extend %open-300;
     font-size: 14px;
