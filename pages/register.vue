@@ -63,12 +63,13 @@ export default {
       }
       if (this.activeStep == 4) {
         this.stepButtonText = "Finish";
-        this.$router.push("/home");
-
+      }
+      if (this.activeStep == 5) {
+        this.$router.push("/");
       }
     },
     closeRegister() {
-      this.$router.push("/home");
+      this.$router.push("/");
     }
   }
 };
