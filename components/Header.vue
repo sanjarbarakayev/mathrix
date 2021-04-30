@@ -7,9 +7,7 @@
         <div class="header__logo">
           <img src="@/assets/img/home/logo.svg" alt="mathrix-logo" />
         </div>
-        <div
-          class="header__action flex justify-between items-center"
-        >
+        <div class="header__action flex justify-between items-center">
           <el-input
             class="header__search"
             placeholder="Find what interests you"
@@ -17,9 +15,7 @@
             v-model="search"
           >
           </el-input>
-          <div
-            class="header__select"
-          >
+          <div class="header__select">
             <el-select v-model="value" placeholder="Terminal ES">
               <el-option
                 v-for="item in options"
@@ -31,13 +27,19 @@
             </el-select>
           </div>
 
-          <button class="header__btn login-btn">Log In</button>
-          <button class="header__btn m-btn-primary register-btn" @click="openRegisterModal">
+          <button class="header__btn login-btn" @click="loginModal = true">
+            Log In
+          </button>
+          <button
+            class="header__btn m-btn-primary register-btn"
+            @click="openRegisterModal"
+          >
             Registration
           </button>
         </div>
       </div>
     </header>
+
     <div class="register__modal">
       <el-dialog :visible.sync="dialogVisible" class="register__modal">
         <div class="register__modal-logo">
@@ -45,7 +47,10 @@
         </div>
         <h2 class="register__modal-title modal-title">Sign up</h2>
         <p class="register__modal-subtitle modal-subtitle">
-          Have an account? <span @click="openLoginModal">Log in</span>
+          Have an account?
+          <span @click="(loginModal = true), (dialogVisible = false)"
+            >Log in</span
+          >
         </p>
         <el-form
           label-position="top"
@@ -81,6 +86,113 @@
             <span>Sign up with Google</span>
           </button>
         </el-form>
+      </el-dialog>
+    </div>
+
+    <div class="login__modal">
+      <el-dialog :visible.sync="loginModal" class="register__modal">
+        <div class="register__modal-logo">
+          <img src="@/assets/img/logo/mathrix-logo.svg" alt="mathrix-logo" />
+        </div>
+        <h2 class="register__modal-title modal-title">Log in</h2>
+        <p class="register__modal-subtitle modal-subtitle">
+          No account yet?
+          <span @click="(dialogVisible = true), (loginModal = false)"
+            >Register</span
+          >
+        </p>
+        <el-form
+          label-position="top"
+          :model="ruleForm"
+          :rules="rules"
+          ref="ruleForm"
+          label-width="120px"
+          class="demo-ruleForm"
+        >
+          <el-form-item prop="email" label="Email" :rules="rules">
+            <el-input v-model="ruleForm.email"></el-input>
+          </el-form-item>
+
+          <el-form-item label="Password" prop="pass">
+            <el-input
+              type="password"
+              v-model="ruleForm.pass"
+              autocomplete="off"
+            ></el-input>
+          </el-form-item>
+
+          <small
+            class="modal-action-text"
+            @click="(loginModal = false), (recoveryPasswordModal = true)"
+            >Forgot your password?</small
+          >
+
+          <button
+            class="m-btn-primary register__modal-btn"
+            @click.prevent="submitLogin('ruleForm')"
+          >
+            Log in
+          </button>
+          <div class="register__modal-devider">or</div>
+          <button class="register__modal-btn">
+            <span>Log in with Facebook</span>
+          </button>
+          <button class="register__modal-btn">
+            <span>Log in with Google</span>
+          </button>
+        </el-form>
+      </el-dialog>
+    </div>
+
+    <div class="recovery">
+      <el-dialog :visible.sync="recoveryPasswordModal" class="register__modal">
+        <div class="register__modal-logo">
+          <img src="@/assets/img/logo/success-logo.svg" alt="mathrix-logo" />
+        </div>
+        <h2 class="register__modal-title modal-title">Forgot your password?</h2>
+        <el-form
+          label-position="top"
+          :model="ruleForm"
+          :rules="rules"
+          ref="ruleForm"
+          label-width="120px"
+          class="demo-ruleForm"
+        >
+          <el-form-item prop="email" label="Email" :rules="rules">
+            <el-input v-model="ruleForm.email"></el-input>
+          </el-form-item>
+
+          <button
+            class="m-btn-primary register__modal-btn"
+            @click.prevent="submitRecoveryPassword('ruleForm')"
+          >
+            Reset
+          </button>
+        </el-form>
+
+        <p
+          class="recovery__action-text modal-action-text"
+          @click="(recoveryPasswordModal = false), (loginModal = true)"
+        >
+          Return to the login page
+        </p>
+      </el-dialog>
+    </div>
+
+    <div class="recovery-complted">
+      <el-dialog :visible.sync="complateRecoveryModal" class="register__modal">
+        <div class="register__modal-logo">
+          <img src="@/assets/img/logo/success-logo.svg" alt="mathrix-logo" />
+        </div>
+        <h2 class="register__modal-title modal-title">
+          We have sent you a message. Go to the mail
+        </h2>
+        <p
+          class="recovery__action-text modal-action-text"
+          @click="(complateRecoveryModal = false), (loginModal = true)"
+        >
+          Return to the login page
+        </p>
       </el-dialog>
     </div>
   </div>
@@ -135,7 +247,10 @@ export default {
           }
         ],
         pass: [{ validator: validatePass, trigger: "blur" }]
-      }
+      },
+      loginModal: false,
+      recoveryPasswordModal: false,
+      complateRecoveryModal: false
     };
   },
   methods: {
@@ -147,6 +262,27 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           this.$router.push("/register");
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
+    },
+    submitLogin(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          this.loginModal = false;
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
+    },
+    submitRecoveryPassword(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          this.recoveryPasswordModal = false;
+          this.complateRecoveryModal = true;
         } else {
           console.log("error submit!!");
           return false;

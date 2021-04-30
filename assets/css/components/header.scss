@@ -105,9 +105,9 @@
     padding: 0 155px;
   }
 
-  &__modal .el-dialog__wrapper {
-    overflow: hidden;
-  }
+  // &__modal .el-dialog__wrapper {
+  //   overflow: hidden;
+  // }
 
   &__modal .el-form-item__label {
     text-align: left;
@@ -232,6 +232,40 @@
   color: #505857;
   margin-bottom: 21px;
   text-align: center;
+}
+
+.recovery {
+  .el-dialog {
+    height: 468px !important;
+  }
+}
+
+.modal-action-text {
+  font-size: 14px;
+  letter-spacing: -0.149625px;
+  text-decoration-line: underline;
+  color: $green-dark;
+  text-decoration: underline;
+  cursor: pointer;
+  @extend %open-600;
+  display: block;
+  text-align: right;
+}
+
+.recovery {
+  &__action-text {
+    text-align: center;
+    margin-top: 52px;
+  }
+}
+
+.recovery-complted {
+  .modal-title {
+    width: 316px;
+  }
+  .el-dialog {
+    height: 312px !important;
+  }
 }
 
 //Media
