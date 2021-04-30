@@ -52,7 +52,7 @@ export default {
       stepTitle: "Let's get acquainted",
       percentage: 25,
       customColor: "#F9ED35",
-      stepButtonText: "Next"
+      stepButtonText: "Next",
     };
   },
   methods: {
@@ -69,8 +69,8 @@ export default {
       }
     },
     closeRegister() {
-      this.$router.push("/");
-    }
-  }
+      this.$router.push("/home");
+    },
+  },
 };
 </script>
