@@ -48,7 +48,6 @@ button:focus {
 }
 
 @keyframes left-arr {
-
   0%,
   100% {
     transform: translateX(0px);
@@ -60,7 +59,6 @@ button:focus {
 }
 
 @keyframes right-arr {
-
   0%,
   100% {
     transform: translateX(0px);
@@ -83,4 +81,22 @@ button:focus {
   font-size: 14px;
   letter-spacing: -0.149625px;
   color: $dark;
+}
+
+.el-breadcrumb__inner.is-link {
+  @extend %open-300;
+  font-weight: 300 !important;
+  font-size: 16px;
+  letter-spacing: -0.149625px;
+  color: #505857;
+}
+
+.el-breadcrumb__item:last-child .el-breadcrumb__inner,
+.el-breadcrumb__item:last-child .el-breadcrumb__inner a,
+.el-breadcrumb__item:last-child .el-breadcrumb__inner a:hover,
+.el-breadcrumb__item:last-child .el-breadcrumb__inner:hover {
+  @extend %open-600;
+  font-size: 16px;
+  letter-spacing: -0.149625px;
+  color: $green-dark !important;
 }

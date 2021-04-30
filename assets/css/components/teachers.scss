@@ -1,1 +1,84 @@
 @import "../var.scss";
+
+.teachers {
+  padding-top: 112px;
+
+  &__breadcrumb {
+    margin-bottom: 21px;
+  }
+
+  &__title {
+    @extend %poppins-600;
+    font-size: 32px;
+    letter-spacing: -0.762769px;
+    color: $green-dark;
+    position: relative;
+    margin-bottom: 21px;
+  }
+
+  &__title::after {
+    position: absolute;
+    background-image: url("../img/patterns/zig-pattern.svg");
+    @extend %bg-i;
+    transform: rotate(180deg);
+    right: 0;
+    top: 25px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    letter-spacing: -0.149625px;
+    color: $dark;
+    margin-bottom: 73px;
+  }
+
+  &__list {
+    background-image: url("../img/bg/teachers-bg.svg");
+    @extend %bg-i;
+    margin-bottom: 111px;
+  }
+}
+
+.teacher {
+  width: 264px;
+  height: 446px;
+  background: #ffffff;
+  box-shadow: 5px 0px 30px rgba(185, 213, 208, 0.5);
+  border-radius: 20px;
+  text-align: center;
+
+  &__img {
+    width: 264px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  &__subject-img {
+    background-image: url("../img/bg/subject-bg.svg");
+    @extend %bg-i;
+    transform: translateX(50%);
+    padding: 15px 30px;
+    margin-top: -59px;
+  }
+  &__text {
+    padding: 0 15px 19px;
+  }
+  &__name {
+    @extend %poppins-600;
+    font-size: 16px;
+    letter-spacing: -0.762769px;
+    color: $dark;
+  }
+  &__subject {
+    @extend %poppins-400;
+    font-size: 14px;
+    letter-spacing: -0.0142658px;
+    color: #b7c2bf;
+  }
+  &__descr {
+    @extend %open-300;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.1575px;
+    color: #414947;
+  }
+}

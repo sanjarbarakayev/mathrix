@@ -55,7 +55,7 @@
       height: 78px;
       bottom: 100px;
       left: 55px;
-      background-image: url("../img/home/zig-pattern.svg");
+      background-image: url("../img/patterns/zig-pattern.svg");
     }
   }
 
@@ -626,7 +626,6 @@
 
 //Media
 
-
 @media (max-width: 1280px) {
   .media__video-placeholder {
     width: 80%;
@@ -665,7 +664,6 @@
     height: auto;
     &__items {
       flex-wrap: wrap;
-      
     }
     &__item {
       margin: 0 auto;
@@ -691,7 +689,6 @@
       background-image: none;
     }
   }
-
 }
 
 @media (max-width: 640px) {
@@ -738,7 +735,6 @@
   .app__title:before {
     bottom: 70px;
   }
-
 }
 @media (max-width: 423px) {
   .top {
@@ -764,4 +760,3 @@
     }
   }
 }
-
