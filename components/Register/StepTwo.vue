@@ -20,15 +20,12 @@
           element-id="tags"
           v-model="selectedTags"
           :existing-tags="[
-            { key: '1', value: 'Institut supérieur de mécanique de Paris' },
-            {
-              key: '2',
-              value: 'Institut national des langues et civilisations orientales'
-            },
-            { key: '3', value: 'Institut de Physique du Globe de Paris' },
-            { key: '4', value: 'Institut d`Études Politiques de Paris' },
-            { key: '5', value: 'Institut d`Études Politiques de Paris' },
-            { key: '6', value: 'Institut d`Études Politiques de Paris' }
+            { key: '1', value: 'Drop item 1' },
+            { key: '2', value: 'Drop item 2' },
+            { key: '3', value: 'Drop item 3' },
+            { key: '4', value: 'Drop item 4' },
+            { key: '5', value: 'Drop item 5' },
+            { key: '6', value: 'Drop item 6' }
           ]"
           :typeahead="true"
           typeahead-style="dropdown"

@@ -256,3 +256,65 @@
 .active-subject {
   border: 2px solid $green-dark;
 }
+
+//Step Four
+
+.step-four {
+  .el-slider__runway {
+    height: 6px;
+    background-color: #d7ede9;
+  }
+  .el-slider__bar {
+    height: 6px;
+    background-color: #d7ede9;
+  }
+  .el-slider__stop {
+    height: 22px;
+    width: 2px;
+    background-color: #d7ede9;
+    transform: translate(-50%, -40%);
+  }
+  .el-slider__marks-text {
+    display: none;
+  }
+
+  .el-slider__runway {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.el-slider__button {
+  width: 48px !important;
+  height: 48px !important;
+  border: 13px solid #fff !important;
+  background-color: $green-dark !important;
+  box-shadow: 5px 0px 30px rgba(185, 213, 208, 0.5) !important;
+  margin-top: -6px;
+}
+
+.avarage {
+  margin-bottom: 110px;
+  &__title {
+    margin-bottom: 21px;
+  }
+}
+
+.consider {
+  &__title {
+    margin-bottom: 21px;
+  }
+}
+
+.slider-increase,
+.slider-decrease {
+  position: absolute;
+}
+.slider-increase {
+  right: -32px;
+  top: 2px;
+}
+.slider-decrease {
+  left: -32px;
+  top: 2px;
+}

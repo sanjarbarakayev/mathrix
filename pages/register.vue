@@ -4,7 +4,7 @@
   >
     <div class="register__header grid grid-cols-3 grid-rows-2">
       <div class="register__prev-step text-left">
-        <button @click="decrease" v-show="activeStep > 1">
+        <button @click="activeStep--" v-show="activeStep > 1">
           <img src="@/assets/img/icons/prev-icon.svg" alt="prev-icon" />
         </button>
       </div>
@@ -27,9 +27,12 @@
       <step-one v-show="activeStep == 1" />
       <step-two v-show="activeStep == 2" />
       <step-three v-show="activeStep == 3" />
+      <step-four v-show="activeStep == 4" />
     </div>
     <div class="register__next-step">
-      <button class="m-btn-primary" @click="increase">Next</button>
+      <button class="m-btn-primary" @click="nextStep()">
+        {{ stepButtonText }}
+      </button>
     </div>
   </div>
 </template>
@@ -38,26 +41,31 @@
 import StepOne from "@/components/Register/StepOne";
 import StepTwo from "@/components/Register/StepTwo";
 import StepThree from "@/components/Register/StepThree";
+import StepFour from "@/components/Register/StepFour";
 
 export default {
   layout: "auth",
-  components: { StepOne, StepTwo, StepThree },
+  components: { StepOne, StepTwo, StepThree, StepFour },
   data() {
     return {
       activeStep: 1,
       stepTitle: "Let's get acquainted",
       percentage: 25,
-      customColor: "#F9ED35"
+      customColor: "#F9ED35",
+      stepButtonText: "Next"
     };
   },
   methods: {
-    decrease() {
-      this.activeStep = --this.activeStep;
-      this.percentage = this.percentage - 25;
-    },
-    increase() {
-      this.activeStep = ++this.activeStep;
-      this.percentage = this.percentage + 25;
+    nextStep() {
+      if (this.activeStep <= 3 || this.activeStep > 0) {
+        this.stepButtonText = "Next";
+        this.activeStep++;
+      }
+      if (this.activeStep == 4) {
+        this.stepButtonText = "Finish";
+        this.$router.push("/home");
+
+      }
     },
     closeRegister() {
       this.$router.push("/home");

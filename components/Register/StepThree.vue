@@ -7,7 +7,7 @@
           class="subject__item flex flex-col"
           v-for="subject of subjects"
           :key="subject"
-          @click.stop="chooseSubject($event)"
+          @click="chooseSubject($event)"
         >
           <img :src="subject.img" alt="subject" class="subject__img" />
           <p class="subject__name">{{ subject.name }}</p>
@@ -47,7 +47,15 @@ export default {
   }),
   methods: {
     chooseSubject(e) {
-      let activeItem = document.querySelector(".subject__item");
+      let activeItem = e.target;
+      //   subjectItems = document.getElementsByClassName("subject__items");
+
+      // subjectItems.forEach(element => {
+      //   if (element.classList.contains("active-subject")) {
+      //     element.classList.remove("active-subject");
+      //   }
+      // });
+
       activeItem.classList.add("active-subject");
     }
   }
