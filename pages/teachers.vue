@@ -7,7 +7,7 @@
           <el-breadcrumb-item>Our teachers</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
-      <h2 class="teachers__title">A project designed by teachers</h2>
+      <h2 class="teachers__title page-title">A project designed by teachers</h2>
       <p class="teachers__subtitle">
         In our team only professional teachers with big experience. These are
         truly professionals
@@ -50,7 +50,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -58,7 +58,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -66,7 +66,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -74,7 +74,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -82,7 +82,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -90,7 +90,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -98,7 +98,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -106,7 +106,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -114,7 +114,7 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
       },
       {
         img: require("@/assets/img/teachers/teacher-maths.jpg"),
@@ -122,12 +122,12 @@ export default {
         name: "Ella Hubbard",
         subject: "Math Teacher",
         descr:
-          "Management of course allocation, teaching material, curricula, quality assurance of courses."
-      }
-    ]
+          "Management of course allocation, teaching material, curricula, quality assurance of courses.",
+      },
+    ],
   }),
   components: {
-    UseApp
-  }
+    UseApp,
+  },
 };
 </script>

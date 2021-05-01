@@ -48,6 +48,7 @@ button:focus {
 }
 
 @keyframes left-arr {
+
   0%,
   100% {
     transform: translateX(0px);
@@ -59,6 +60,7 @@ button:focus {
 }
 
 @keyframes right-arr {
+
   0%,
   100% {
     transform: translateX(0px);
@@ -81,6 +83,16 @@ button:focus {
   font-size: 14px;
   letter-spacing: -0.149625px;
   color: $dark;
+}
+
+.page-title {
+  @extend %poppins-600;
+  font-size: 32px;
+  letter-spacing: -0.762769px;
+  color: $green-dark;
+  margin-bottom: 21px;
+  position: relative;
+  display: inline-block;
 }
 
 .el-breadcrumb__inner.is-link {

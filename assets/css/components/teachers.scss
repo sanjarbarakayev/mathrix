@@ -7,15 +7,7 @@
     margin-bottom: 21px;
   }
 
-  &__title {
-    @extend %poppins-600;
-    font-size: 32px;
-    letter-spacing: -0.762769px;
-    color: $green-dark;
-    margin-bottom: 21px;
-    position: relative;
-    display: inline-block;
-  }
+  &__title {}
 
   &__title::after {
     content: "";
