@@ -1,0 +1,162 @@
+.dashboard {
+  &__header {
+    margin-top: 34px;
+    margin-bottom: 50px;
+  }
+
+  .page-title::after {
+    background-image: url("../img/patterns/zig-pattern.svg");
+    transform: rotate(180deg);
+    width: 96px;
+    height: 68px;
+    top: 10px;
+  }
+
+  &__activity {
+    border: 1px solid rgba(134, 201, 190, 0.23);
+    border-radius: 6px;
+    padding: 17px 20px;
+
+    @extend %open-300;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.149625px;
+    color: #8D8D8D;
+  }
+
+  &__activity p:first-child {
+    margin-right: 26px;
+  }
+
+  &__activity span {
+    @extend %open-700;
+    font-size: 16px;
+    letter-spacing: -0.149625px;
+    color: $green-dark;
+  }
+
+  .el-tabs__item.is-active {
+    color: $green-dark;
+  }
+
+  .el-tabs__active-bar {
+    background-color: $green-dark;
+  }
+
+  .el-tabs__item:hover {
+    color: $green-dark;
+  }
+
+}
+
+.courses {
+  &__title {
+    @extend %poppins-500;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $blue-dark;
+    margin: 30px 0 16px;
+  }
+
+}
+
+.course {
+  background: #FFFFFF;
+  box-shadow: 5px 0px 30px rgba(185, 213, 208, 0.5);
+  border-radius: 20px;
+  padding: 22px;
+  overflow: hidden;
+
+  &__progress svg {
+    width: 92px;
+  }
+
+  .el-progress--circle .el-progress__text,
+  .el-progress--dashboard .el-progress__text {
+    @extend %open-700;
+    font-size: 24px;
+    letter-spacing: -1.59917px;
+    color: #FF773C;
+    background: #FFF5F0;
+    padding: 15px;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    top: 36%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__name {
+    background: rgba(255, 242, 236, 0.8);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 5px 17px;
+
+    @extend %open-600;
+    font-size: 12px;
+    letter-spacing: -0.149625px;
+    color: #FF773C;
+  }
+
+  &__pattern {
+    position: absolute;
+    right: -50px;
+    top: -100px;
+  }
+
+  &__topic {
+    @extend %poppins-600;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.762769px;
+    color: #282929;
+    width: 211px;
+  }
+
+  &__continue {
+    @extend %poppins-600;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $green-dark;
+  }
+}
+
+.complate {
+  &__item {
+    padding: 10px 28px;
+  }
+
+  &__item:first-child {
+    border-right: 1px solid #E1F1EF;
+    border-bottom: 1px solid #E1F1EF;
+  }
+
+  &__item:last-child {
+    border-left: 1px solid #E1F1EF;
+    border-top: 1px solid #E1F1EF;
+    margin-left: -0.75px;
+    margin-top: -2px;
+  }
+
+  &__title {
+    @extend %open-700;
+    font-size: 14px;
+    letter-spacing: -0.0142658px;
+    color: $dark;
+  }
+
+  &__subtitle {
+    @extend %open-300;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.149625px;
+    color: #8D8D8D;
+  }
+
+}

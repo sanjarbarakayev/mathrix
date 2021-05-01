@@ -93,6 +93,17 @@ button:focus {
   margin-bottom: 21px;
   position: relative;
   display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/patterns/zig2-pattern.svg");
+    @extend %bg-i;
+    right: 0;
+    top: -18px;
+    width: 135px;
+    height: 122px;
+  }
 }
 
 .el-breadcrumb__inner.is-link {

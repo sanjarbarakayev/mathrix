@@ -1,23 +1,10 @@
 @import "../var.scss";
 
 .teachers {
-  padding-top: 112px;
+  padding-top: 38px;
 
   &__breadcrumb {
     margin-bottom: 21px;
-  }
-
-  &__title {}
-
-  &__title::after {
-    content: "";
-    position: absolute;
-    background-image: url("../img/patterns/zig2-pattern.svg");
-    @extend %bg-i;
-    right: 0;
-    top: -18px;
-    width: 135px;
-    height: 122px;
   }
 
   &__subtitle {

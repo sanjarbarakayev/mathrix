@@ -29,6 +29,11 @@ $grey-light: #b7b7b7;
   font-weight: 600;
 }
 
+%open-700 {
+  font-family: "Open Sans";
+  font-weight: 700;
+}
+
 %open-400 {
   font-family: "Open Sans";
   font-weight: 400;
@@ -51,6 +56,7 @@ $grey-light: #b7b7b7;
 
 %title-pattern {
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
