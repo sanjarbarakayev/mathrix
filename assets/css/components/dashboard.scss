@@ -21,11 +21,12 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.149625px;
-    color: #8D8D8D;
+    color: #8d8d8d;
   }
 
-  &__activity p:first-child {
-    margin-right: 26px;
+  &__activity p {
+    display: flex;
+    align-items: center;
   }
 
   &__activity span {
@@ -47,6 +48,9 @@
     color: $green-dark;
   }
 
+  .subject {
+    margin-bottom: 80px;
+  }
 }
 
 .courses {
@@ -57,11 +61,10 @@
     color: $blue-dark;
     margin: 30px 0 16px;
   }
-
 }
 
 .course {
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 5px 0px 30px rgba(185, 213, 208, 0.5);
   border-radius: 20px;
   padding: 22px;
@@ -76,8 +79,8 @@
     @extend %open-700;
     font-size: 24px;
     letter-spacing: -1.59917px;
-    color: #FF773C;
-    background: #FFF5F0;
+    color: #ff773c;
+    background: #fff5f0;
     padding: 15px;
     border-radius: 50%;
     width: 64px;
@@ -101,7 +104,7 @@
     @extend %open-600;
     font-size: 12px;
     letter-spacing: -0.149625px;
-    color: #FF773C;
+    color: #ff773c;
   }
 
   &__pattern {
@@ -133,13 +136,13 @@
   }
 
   &__item:first-child {
-    border-right: 1px solid #E1F1EF;
-    border-bottom: 1px solid #E1F1EF;
+    border-right: 1px solid #e1f1ef;
+    border-bottom: 1px solid #e1f1ef;
   }
 
   &__item:last-child {
-    border-left: 1px solid #E1F1EF;
-    border-top: 1px solid #E1F1EF;
+    border-left: 1px solid #e1f1ef;
+    border-top: 1px solid #e1f1ef;
     margin-left: -0.75px;
     margin-top: -2px;
   }
@@ -156,7 +159,84 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.149625px;
-    color: #8D8D8D;
+    color: #8d8d8d;
+  }
+}
+
+.sidebar {
+  width: 290px;
+
+  &__menu {
+    margin-top: 46px;
   }
 
+  &__item {
+    @extend %poppins-400;
+    font-size: 16px;
+    letter-spacing: -0.149625px;
+    color: $dark;
+    transition: all 0.5s;
+    display: inline-block;
+    padding: 3px 50px;
+    margin-bottom: 40px;
+  }
+
+  &__item:hover {
+    color: $green-dark;
+    cursor: pointer;
+  }
+
+  &__item._active {
+    background-image: url("../img/bg/tab-text-bg.svg");
+    @extend %bg-i;
+    background-position: 25px center;
+  }
+}
+
+.motivation {
+  margin-bottom: 150px;
+  &__content {
+    padding-left: 48px;
+    border-left: 1px solid rgba(54, 165, 147, 0.2);
+    margin-top: 46px;
+  }
+
+  &__title {
+    @extend %poppins-500;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $blue-dark;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    grid-gap: 48px;
+  }
+
+  &__item {
+    background: #ffffff;
+    box-shadow: 2.875px 0px 17.25px rgba(185, 213, 208, 0.5);
+    border-radius: 7.79661px;
+    padding: 16px;
+  }
+
+  &__item img {
+    border: 8px;
+    margin-bottom: 20px;
+  }
+
+  &__item p {
+    @extend %open-600;
+    font-size: 14px;
+    color: $dark;
+    text-align: center;
+  }
+
+  &__success {
+    margin-bottom: 46px;
+  }
+
+  &__show {
+    margin-bottom: 46px;
+  }
 }
