@@ -93,6 +93,32 @@
     font-size: 14px;
     @extend %poppins-600;
   }
+
+  .getpremium-btn {
+    order: 3;
+  }
+
+  .user-btn {
+    order: 4;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bell-btn {
+    order: 5;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 //Auth Modal

@@ -27,14 +27,48 @@
             </el-select>
           </div>
 
-          <button class="header__btn login-btn" @click="loginModal = true">
+          <button
+            v-if="!isAuthorized"
+            class="header__btn login-btn"
+            @click="loginModal = true"
+          >
             Log In
           </button>
           <button
+            v-if="!isAuthorized"
             class="header__btn m-btn-primary register-btn"
             @click="openRegisterModal"
           >
             Registration
+          </button>
+          <nuxt-link to="get-premium">
+            <button v-if="isAuthorized" class="m-btn-primary getpremium-btn">
+              Get Premium
+            </button>
+          </nuxt-link>
+          <button class="user-btn" v-if="isAuthorized">
+            <el-dropdown>
+              <span class="el-dropdown-link header__dropdown">
+                <img src="@/assets/img/icons/user-icon.svg" alt="user-icon" />
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>Action 1</el-dropdown-item>
+                <el-dropdown-item>Action 2</el-dropdown-item>
+                <el-dropdown-item>Action 3</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
+          </button>
+          <button class="bell-btn" v-if="isAuthorized">
+            <el-dropdown>
+              <span class="el-dropdown-link header__dropdown">
+                <img src="@/assets/img/icons/bell-icon.svg" alt="bell-icon" />
+              </span>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>Action 1</el-dropdown-item>
+                <el-dropdown-item>Action 2</el-dropdown-item>
+                <el-dropdown-item>Action 3</el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
           </button>
         </div>
       </div>
@@ -250,7 +284,8 @@ export default {
       },
       loginModal: false,
       recoveryPasswordModal: false,
-      complateRecoveryModal: false
+      complateRecoveryModal: false,
+      isAuthorized: true
     };
   },
   methods: {
