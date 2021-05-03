@@ -143,7 +143,114 @@
             </div>
           </el-tab-pane>
 
-          <el-tab-pane label="Training" name="training">Training</el-tab-pane>
+          <el-tab-pane label="Training" name="training">
+            <div class="training mb-8">
+              <div class="training__user mb-10">
+                <h3 class="training__title mb-4">Your training</h3>
+                <div
+                  class="training__list grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                  <div
+                    class="training__item p-4 text-center"
+                    v-for="(item, i) of userTrainings"
+                    :key="i"
+                  >
+                    <div class="training__video relative mb-2">
+                      <img :src="item.img" alt="mathrix-training" />
+                      <img
+                        class="play-video"
+                        src="@/assets/img/icons/video-icon.svg"
+                        alt="play-video-icon"
+                      />
+                    </div>
+                    <h4 class="training__name my-4 mx-auto">{{ item.name }}</h4>
+                    <div class="training__info flex justify-around pb-3">
+                      <div class="training__time">
+                        <img
+                          src="@/assets/img/icons/time-icon.svg"
+                          alt="time-icon"
+                          class="mb-2 mx-auto"
+                        />
+                        <p class="mx-auto">{{ item.time }} hours total</p>
+                      </div>
+                      <div class="training__class">
+                        <img
+                          src="@/assets/img/icons/book-icon.svg"
+                          alt="book-icon"
+                          class="mb-2 mx-auto"
+                        />
+                        <p class="mx-auto">for {{ item.classes }} classes</p>
+                      </div>
+                    </div>
+                    <nuxt-link
+                      :to="{
+                        path: '/training',
+                        query: { trainingId: item.id }
+                      }"
+                    >
+                      <button class="training__btn mt-4">
+                        Continue
+                        <el-icon class="el-icon-right mt-1 ml-2"></el-icon>
+                      </button>
+                    </nuxt-link>
+                  </div>
+                </div>
+              </div>
+
+              <div class="training__all">
+                <h3 class="training__title mb-3">All trainings available</h3>
+                <div
+                  class="training__list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-67"
+                >
+                  <div
+                    class="training__item p-4 text-center"
+                    v-for="(item, t) of allTrainings"
+                    :key="t"
+                  >
+                    <div class="training__video relative mb-2">
+                      <img :src="item.img" alt="mathrix-training" />
+                      <img
+                        src="@/assets/img/icons/video-icon.svg"
+                        alt="play-video-icon"
+                        class="play-video"
+                      />
+                    </div>
+                    <h4 class="training__name my-4 mx-auto">
+                      {{ item.name }}
+                    </h4>
+                    <div class="training__info flex justify-around pb-3">
+                      <div class="training__time">
+                        <img
+                          src="@/assets/img/icons/time-icon.svg"
+                          alt="time-icon"
+                          class="mx-auto"
+                        />
+                        <p class="mx-auto">{{ item.time }} hours total</p>
+                      </div>
+                      <div class="training__class">
+                        <img
+                          src="@/assets/img/icons/book-icon.svg"
+                          alt="book-icon"
+                          class="mx-icon"
+                        />
+                        <p class="mx-auto">for {{ item.classes }} classes</p>
+                      </div>
+                    </div>
+                    <nuxt-link
+                      :to="{
+                        path: '/training',
+                        query: { trainingId: item.id }
+                      }"
+                    >
+                      <button class="training__btn mt-4">
+                        More info
+                      </button>
+                    </nuxt-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </el-tab-pane>
         </el-tabs>
       </div>
     </div>
@@ -301,6 +408,45 @@ export default {
       {
         img: require("@/assets/img/home/video-placeholder-2.jpg"),
         title: "Are you studying and still can’t do it?"
+      }
+    ],
+    userTrainings: [
+      {
+        img: require("@/assets/img/videos/video-placeholder-1.jpg"),
+        name: "Math exam preparation",
+        time: 2,
+        classes: 4,
+        id: 1
+      },
+      {
+        img: require("@/assets/img/videos/video-placeholder-2.jpg"),
+        name: "Increasing and decreasing functions and others",
+        time: 2,
+        classes: 4,
+        id: 2
+      }
+    ],
+    allTrainings: [
+      {
+        img: require("@/assets/img/videos/video-placeholder-3.jpg"),
+        name: "Math exam preparation",
+        time: 2,
+        classes: 4,
+        id: 3
+      },
+      {
+        img: require("@/assets/img/videos/video-placeholder-4.jpg"),
+        name: "Math exam preparation",
+        time: 2,
+        classes: 4,
+        id: 4
+      },
+      {
+        img: require("@/assets/img/videos/video-placeholder-5.jpg"),
+        name: "Math exam preparation",
+        time: 2,
+        classes: 4,
+        id: 5
       }
     ]
   }),

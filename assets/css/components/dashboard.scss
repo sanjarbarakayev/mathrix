@@ -240,3 +240,62 @@
     margin-bottom: 46px;
   }
 }
+
+.training {
+  &__title {
+    @extend %poppins-500;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $blue-dark;
+  }
+  &__item {
+    @extend %card-shadow;
+    width: 368px;
+  }
+
+  &__video img:first-child {
+    width: 100%;
+    height: 234px;
+    object-fit: cover;
+    width: 0 auto;
+  }
+
+  .play-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  &__name {
+    @extend %poppins-600;
+    font-size: 18px;
+    letter-spacing: -0.762769px;
+    color: $dark;
+    width: 310px;
+  }
+
+  &__info {
+    border-bottom: 1px solid #e1f1ef;
+  }
+
+  &__time {
+    text-align: center;
+  }
+
+  &__btn {
+    @extend %poppins-600;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $green-dark;
+  }
+
+  &__btn i {
+    transition: all 0.5s;
+  }
+
+  &__btn:hover i {
+    transform: translateX(7px);
+  }
+}
