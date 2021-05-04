@@ -69,7 +69,15 @@
               <h3 class="subject__title step-title">Coose the subject</h3>
               <div class="subject__items grid grid-cols-4 grid-rows-3">
                 <div v-for="(subject, index) of subjects" :key="index">
-                  <nuxt-link :to="subject.link">
+                  <nuxt-link
+                    :to="{
+                      name: 'dashboard-chapters',
+                      params: {
+                        chapterName: subject.name,
+                        chapterImg: subject.img
+                      }
+                    }"
+                  >
                     <div class="subject__item flex flex-col">
                       <img
                         :src="subject.img"

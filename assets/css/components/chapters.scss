@@ -1,0 +1,109 @@
+@import "../var";
+
+.chapters {
+  &__wrapper {
+    margin-bottom: 100px;
+  }
+  .sidebar {
+    width: 300px;
+  }
+
+  .sidebar__menu {
+    margin-top: 0;
+  }
+}
+
+.sidebar {
+  &__title {
+    @extend %poppins-600;
+    font-size: 22px;
+    letter-spacing: -0.0142658px;
+    color: $green-dark;
+  }
+}
+
+.chapter {
+  &__main {
+    border-left: 1px solid #36a593;
+    flex: 1 1;
+  }
+
+  &__img {
+    position: absolute;
+    right: 40px;
+    top: -90px;
+    width: 160px;
+    height: 160px;
+  }
+
+  &__list {
+    @extend %card-shadow;
+  }
+
+  &__title {
+    @extend %poppins-600;
+    font-size: 32px;
+    letter-spacing: -0.762769px;
+    color: $green-dark;
+  }
+
+  &__item-title {
+    @extend %poppins-600;
+    font-size: 18px;
+    letter-spacing: -0.762769px;
+    color: $grey-dark;
+  }
+
+  &__item-title::after {
+    content: "";
+    position: absolute;
+    background-image: url("../img/patterns/title-pattern-3.svg");
+    @extend %bg-i;
+    bottom: -9px;
+    left: -7px;
+    width: 158px;
+    height: 16px;
+  }
+
+  &__item-progress {
+    flex: 0 0 210px;
+  }
+
+  &__main .el-progress-bar__inner {
+    background-color: #f9ed35;
+  }
+
+  &__main .el-progress-bar__outer {
+    background-color: #fdf6cf;
+    height: 10px !important;
+  }
+
+  &__item-percent {
+    position: absolute;
+    top: -20px;
+    right: 0px;
+    @extend %open-400;
+    font-size: 16px;
+    letter-spacing: -0.149625px;
+    color: $dark;
+  }
+
+  &__main .el-progress__text {
+    display: none;
+  }
+
+  &__main .el-progress-bar {
+    padding-right: 0;
+  }
+
+  &__item {
+    @extend %open-400;
+    font-size: 14px;
+    letter-spacing: -0.149625px;
+    color: $dark;
+  }
+
+  &__item-wrapper {
+    border-bottom: 1px solid rgba(54, 165, 147, 0.2);
+  }
+}

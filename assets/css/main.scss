@@ -1,6 +1,6 @@
-@import "_fonts.scss";
-@import "_global.scss";
-@import "_var.scss";
+@import "fonts";
+@import "global";
+@import "var";
 
 //Vue-TagsInput
 
@@ -13,3 +13,4 @@
 @import "components/teachers.scss";
 @import "components/dashboard.scss";
 @import "components/get-premium.scss";
+@import "components/chapters.scss";
