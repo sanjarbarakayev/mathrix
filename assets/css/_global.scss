@@ -48,7 +48,6 @@ button:focus {
 }
 
 @keyframes left-arr {
-
   0%,
   100% {
     transform: translateX(0px);
@@ -60,7 +59,6 @@ button:focus {
 }
 
 @keyframes right-arr {
-
   0%,
   100% {
     transform: translateX(0px);
@@ -122,4 +120,11 @@ button:focus {
   font-size: 16px;
   letter-spacing: -0.149625px;
   color: $green-dark !important;
+}
+
+.el-dialog__close {
+  color: transparent !important;
+  background-image: url("../img/icons/close-icon.svg");
+  width: 24px;
+  height: 24px;
 }

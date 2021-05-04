@@ -185,3 +185,62 @@
     transform: rotate(45deg);
   }
 }
+
+.payment-modal {
+  .el-dialog__close {
+    color: transparent !important;
+    background-image: url("../img/icons/close-icon.svg");
+    width: 24px;
+    height: 24px;
+  }
+
+  .section-title {
+    @extend %title-pattern;
+  }
+
+  .section-title::before {
+    background-image: url("../img/patterns/title-pattern-1.svg");
+    width: 34px;
+    height: 23px;
+    bottom: 35px;
+  }
+
+  &__price {
+    @extend %open-700;
+    font-size: 16px;
+    letter-spacing: -0.762769px;
+    color: $grey-dark;
+  }
+
+  &__subtitle {
+    @extend %poppins-500;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $blue-dark;
+  }
+
+  .register__modal .el-dialog {
+    padding: 0px 65px;
+    height: 550px !important;
+  }
+
+  .el-form-item:nth-child(2) {
+    flex: 0 1 25%;
+  }
+
+  .el-form-item:nth-child(3) {
+    flex: 0 1 25%;
+  }
+
+  .el-form-item__label {
+    text-align-last: left;
+    @extend %poppins-600;
+    font-size: 16px;
+    letter-spacing: -0.0142658px;
+    color: $dark;
+  }
+
+  .el-form--label-top .el-form-item__label {
+    display: block;
+  }
+}

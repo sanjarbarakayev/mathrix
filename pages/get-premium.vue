@@ -54,12 +54,105 @@
               <span>{{ item.price }} &euro;</span> / month
             </p>
             <p class="price__descr my-4 mx-auto">{{ item.descr }}</p>
-            <nuxt-link :to="{ path: '/payment', query: { priceId: item.id } }">
-              <button class="m-btn-primary relative ">Get premium</button>
-            </nuxt-link>
+            <button class="m-btn-primary relative" @click="paymentModal = true">
+              Get premium
+            </button>
+          </div>
+
+          <div class="payment-modal">
+            <el-dialog :visible.sync="paymentModal" class="register__modal">
+              <h2 class="register__modal-title section-title mt-4">
+                {{ item.title }}
+              </h2>
+              <p class="my-6">
+                <span class="payment-modal__price">{{ item.price }}</span> /
+                month
+              </p>
+              <p class="payment-modal__subtitle text-left my-4">
+                Payment information
+              </p>
+              <el-form
+                label-position="top"
+                label-width="120px"
+                class="demo-ruleForm"
+              >
+                <el-form-item
+                  prop="nameHolder"
+                  label="Name of the card holder"
+                  :rules="rules"
+                >
+                  <el-input
+                    v-model="rulePayment.nameHolder"
+                    placeholder="Enter card name"
+                  ></el-input>
+                </el-form-item>
+                <div class="flex justify-between">
+                  <el-form-item
+                    prop="cardNUmber"
+                    label="Credit card number"
+                    :rules="rules"
+                  >
+                    <el-input
+                      v-model="rulePayment.cardNUmber"
+                      placeholder="1111 2222 3333 4444"
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item
+                    prop="expiry"
+                    label="Expiry"
+                    :rules="rules"
+                    class="mx-6"
+                  >
+                    <el-input
+                      v-model="rulePayment.expiry"
+                      placeholder="01 / 21"
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item
+                    prop="cryptogram"
+                    label="Cryptogram"
+                    :rules="rules"
+                  >
+                    <el-input
+                      v-model="rulePayment.cryptogram"
+                      placeholder="123"
+                    ></el-input>
+                  </el-form-item>
+                </div>
+                <el-form-item class="text-left">
+                  <el-checkbox v-model="acceptTems"
+                    >I accept terms and conditions</el-checkbox
+                  >
+                </el-form-item>
+
+                <button
+                  class="m-btn-primary"
+                  @click.prevent="submitPayment('rulePayment')"
+                >
+                  Pay {{ item.price }}
+                </button>
+              </el-form>
+            </el-dialog>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="recovery-complted">
+      <el-dialog :visible.sync="paymentSuccess" class="register__modal">
+        <div class="register__modal-logo">
+          <img src="@/assets/img/logo/success-logo.svg" alt="mathrix-logo" />
+        </div>
+        <h2 class="register__modal-title modal-title">
+          Congratulations!
+        </h2>
+        <p
+          class="recovery__action-text modal-action-text"
+          @click="goToDashboard"
+        >
+          Go to dasboard
+        </p>
+      </el-dialog>
     </div>
 
     <methods-media />
@@ -170,7 +263,25 @@ export default {
           "You can pay online with confidence, all transactions made on the Mathrix.fr site are 100% secure and ensured by our payment partner Stripe. We pay particular attention to the security of your data: your credit card information is encrypted using the SSL (Secure Socket Layer) protocol and no bank data is stored on our network."
       }
     ],
-    activeQuestion: 4
-  })
+    activeQuestion: 4,
+    paymentModal: false,
+    acceptTerms: false,
+    rulePayment: {
+      nameHolder: "",
+      cardNUmber: "",
+      expiry: "",
+      cryptogram: ""
+    },
+    paymentSuccess: false
+  }),
+  methods: {
+    submitPayment() {
+      this.paymentModal = false;
+      this.paymentSuccess = true;
+    },
+    goToDashboard() {
+      this.$router.push("/");
+    }
+  }
 };
 </script>

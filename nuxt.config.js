@@ -23,7 +23,8 @@ export default {
   plugins: [
     "@/plugins/element-ui",
     { src: "@/plugins/vue-awesome-swiper", mode: "client" },
-    { src: "@/plugins/voerro-tags-input", mode: "client" }
+    { src: "@/plugins/voerro-tags-input", mode: "client" },
+    { src: "@/plugins/vue-the-mask", mode: "client" }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
