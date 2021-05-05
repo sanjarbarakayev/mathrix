@@ -60,7 +60,19 @@
                   v-for="(content, c) of contents"
                   :key="c"
                 >
-                  {{ content.title }}
+                  <nuxt-link
+                    :to="{
+                      name: 'dashboard-chapters-topics',
+                      params: {
+                        topicName: content.tite,
+                        subjectImg: chapterImg,
+                        subjectName: chapterName,
+                        contents: contents
+                      }
+                    }"
+                  >
+                    {{ content.title }}
+                  </nuxt-link>
                 </div>
               </div>
             </div>
@@ -69,6 +81,7 @@
       </div>
     </div>
     <use-app />
+    <pre>{{ selectedSubjectInfo }}</pre>
   </div>
 </template>
 
@@ -100,7 +113,7 @@ export default {
       { title: "Series", percent: 40 }
     ],
     contents: [
-      { tite: "First step" },
+      { title: "Complex numbers" },
       { title: "Trigonometry" },
       { title: "Series" },
       { title: "Series" },
@@ -113,6 +126,11 @@ export default {
       { title: "Trigonometry" }
     ]
   }),
+  computed: {
+    selectedSubjectInfo() {
+      return this.$store.state.subjects.selectedSubjectInfo;
+    }
+  },
   methods: {
     sidebarActive(e) {
       let sidebarElements = document.getElementsByClassName("sidebar__item");
@@ -127,8 +145,9 @@ export default {
     }
   },
   mounted() {
-    this.chapterName = this.$route.params.chapterName;
-    this.chapterImg = this.$route.params.chapterImg;
+    // this.chapterName = this.$route.params.chapterName;
+    // this.chapterImg = this.$route.params.chapterImg;
+    console.log();
   }
 };
 </script>

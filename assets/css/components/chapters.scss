@@ -101,6 +101,12 @@
     font-size: 14px;
     letter-spacing: -0.149625px;
     color: $dark;
+    transition: all 0.5s;
+  }
+
+  &__item:hover {
+    color: $green-dark;
+    cursor: pointer;
   }
 
   &__item-wrapper {

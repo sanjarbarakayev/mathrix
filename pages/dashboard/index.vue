@@ -66,17 +66,12 @@
             </div>
 
             <div class="subject">
-              <h3 class="subject__title step-title">Coose the subject</h3>
+              <h3 class="subject__title step-title mt-6">Choose the subject</h3>
               <div class="subject__items grid grid-cols-4 grid-rows-3">
-                <div v-for="(subject, index) of subjects" :key="index">
+                <div v-for="(subject, index) in subjectsList" :key="index">
                   <nuxt-link
-                    :to="{
-                      name: 'dashboard-chapters',
-                      params: {
-                        chapterName: subject.name,
-                        chapterImg: subject.img
-                      }
-                    }"
+                    @change="setSubject(subject.name, subject.img)"
+                    to="/dashboard/chapters"
                   >
                     <div class="subject__item flex flex-col">
                       <img
@@ -262,11 +257,13 @@
         </el-tabs>
       </div>
     </div>
+
     <use-app />
   </div>
 </template>
 
 <script>
+import { mapMutations, mapState, mapActions } from "vuex";
 import UseApp from "@/components/UseApp";
 export default {
   data: () => ({
@@ -308,58 +305,58 @@ export default {
         totolExam: 4
       }
     ],
-    subjects: [
-      {
-        img: require("@/assets/img/subjects/maths.svg"),
-        name: "Mathematics",
-        link: "/dashboard/maths"
-      },
-      {
-        img: require("@/assets/img/subjects/physical.svg"),
-        name: "Physical",
-        link: "/dashboard/physical"
-      },
-      {
-        img: require("@/assets/img/subjects/svt.svg"),
-        name: "SVT",
-        link: "/dashboard/svt"
-      },
-      {
-        img: require("@/assets/img/subjects/history.svg"),
-        name: "History",
-        link: "/dashboard/history"
-      },
-      {
-        img: require("@/assets/img/subjects/chemistry.svg"),
-        name: "Chemistry",
-        link: "/dashboard/chemistry"
-      },
-      {
-        img: require("@/assets/img/subjects/numeric.svg"),
-        name: "Numeric Science",
-        link: "/dashboard/numeric"
-      },
-      {
-        img: require("@/assets/img/subjects/technology.svg"),
-        name: "Technology",
-        link: "/dashboard/technology"
-      },
-      {
-        img: require("@/assets/img/subjects/philosophy.svg"),
-        name: "Philosophy",
-        link: "/dashboard/philosophy"
-      },
-      {
-        img: require("@/assets/img/subjects/geographi.svg"),
-        name: "Geographi",
-        link: "/dashboard/geographi"
-      },
-      {
-        img: require("@/assets/img/subjects/language.svg"),
-        name: "French",
-        link: "/dashboard/language"
-      }
-    ],
+    // subjects: [
+    //   {
+    //     img: require("@/assets/img/subjects/maths.svg"),
+    //     name: "Mathematics",
+    //     link: "/dashboard/maths"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/physical.svg"),
+    //     name: "Physical",
+    //     link: "/dashboard/physical"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/svt.svg"),
+    //     name: "SVT",
+    //     link: "/dashboard/svt"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/history.svg"),
+    //     name: "History",
+    //     link: "/dashboard/history"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/chemistry.svg"),
+    //     name: "Chemistry",
+    //     link: "/dashboard/chemistry"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/numeric.svg"),
+    //     name: "Numeric Science",
+    //     link: "/dashboard/numeric"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/technology.svg"),
+    //     name: "Technology",
+    //     link: "/dashboard/technology"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/philosophy.svg"),
+    //     name: "Philosophy",
+    //     link: "/dashboard/philosophy"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/geographi.svg"),
+    //     name: "Geographi",
+    //     link: "/dashboard/geographi"
+    //   },
+    //   {
+    //     img: require("@/assets/img/subjects/language.svg"),
+    //     name: "French",
+    //     link: "/dashboard/language"
+    //   }
+    // ],
     complatedTasks: [
       {
         complated: 35,
@@ -458,6 +455,11 @@ export default {
       }
     ]
   }),
+  computed: {
+    subjectsList() {
+      return this.$store.state.subjects.subjectsList;
+    }
+  },
   methods: {
     sidebarActive(e) {
       let sidebarElements = document.getElementsByClassName("sidebar__item");
@@ -469,10 +471,17 @@ export default {
       });
 
       e.target.classList.add("_active");
-    }
+    },
+    ...mapMutations({
+      setSubject: "subjects/setSubject"
+    })
   },
   components: {
     UseApp
+  },
+  mounted() {
+    // this.studentsList = this.$store.state.subjects.subjectsList;
+    // console.log(this.$store.state.subjects.subjectsList)
   }
 };
 </script>
