@@ -70,7 +70,7 @@
               <div class="subject__items grid grid-cols-4 grid-rows-3">
                 <div v-for="(subject, index) in subjectsList" :key="index">
                   <nuxt-link
-                    @change="setSubject(subject.name, subject.img)"
+                    @click="setSubject({subjectName: subject.name, subjectImg: subject.img})"
                     to="/dashboard/chapters"
                   >
                     <div class="subject__item flex flex-col">
@@ -479,6 +479,6 @@ export default {
       setSubject: "subjects/setSubject"
     })
   },
-  
+
 };
 </script>

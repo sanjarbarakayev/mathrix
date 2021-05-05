@@ -49,7 +49,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  setSubject(state, subjectName, subjectImg) {
+  setSubject(state, {subjectName, subjectImg}) {
     state.selectedSubjectInfo.subjectName = subjectName;
     state.selectedSubjectInfo.subjectImg = subjectImg;
   }
