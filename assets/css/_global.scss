@@ -128,3 +128,29 @@ button:focus {
   width: 24px;
   height: 24px;
 }
+
+
+//Tabs
+
+.el-tabs__item.is-active {
+  color: $green-dark !important;
+}
+
+.el-tabs__active-bar {
+  background-color: $green-dark !important;
+}
+
+.el-tabs__item:hover {
+  color: $green-dark !important;
+}
+
+.el-tabs__item {
+  @extend %poppins-600;
+  @extend %letter-space-1;
+  font-size: 16px;
+  color: #B7C2BF !important;
+}
+
+
+
+

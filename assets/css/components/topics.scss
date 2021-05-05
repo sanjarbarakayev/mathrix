@@ -1,0 +1,126 @@
+
+.topics {
+  .page-title {
+    margin-bottom: 40px;
+  }
+
+  &__tabs {
+    @extend %card-shadow;
+    padding: 62px 104px;
+    margin-bottom: 120px;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0px;
+    top: -120px;
+    width: 230px;
+    height: 190px;
+  }
+
+  .slider {
+    flex: 0 1 50%;
+  }
+}
+
+.exercises {
+  &__main {
+    flex: 0 1 80%;
+    border-left: 1px solid rgba(54, 165, 147, 0.2);
+    padding-right: 50px;
+  }
+
+  &__main .el-progress-bar__inner {
+    background-color: #f9ed35;
+  }
+
+  &__main .el-progress-bar__outer {
+    background-color: #fdf6cf;
+    height: 10px !important;
+  }
+
+  &__items {
+    margin: 0px auto;
+  }
+}
+
+.topic {
+
+  .el-progress__text {
+    display: none !important;
+  }
+  .el-progress-bar {
+    padding-right: 0px !important;
+  }
+
+  &__title {
+    @extend %poppins-600;
+    @extend %letter-space-7;
+    font-size: 18px;
+    color: $grey-dark;
+  }
+
+  &__subtitle {
+    @extend %open-400;
+    @extend %letter-space-7;
+    font-size: 14px;
+    color: $grey-light;
+  }
+
+  &__progress {
+    flex: 0 1 200px;
+  }
+  &__percent {
+    @extend %open-600;
+    @extend  %letter-space-7;
+    font-size: 12px;
+    color: $dark;
+    text-align: right;
+    display: block;
+  }
+
+  &__item {
+    @extend %card-shadow;
+
+  }
+
+  &__main-title {
+    @extend %open-400;
+    @extend %letter-space-1;
+    font-size: 14px;
+    color: $dark;
+  }
+
+  &__item-bottom {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(54, 165, 147, 0.2);
+  }
+}
+
+.status {
+
+  & > div {
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    margin-right: -1.5rem;
+    padding: 10px;
+    @extend %open-600;
+    @extend %letter-space-1;
+    font-size: 12px;
+  }
+
+  &__revise-again {
+    background-color: #F2F8FC;
+    color: #5F97F0;
+  }
+
+  &__not-completed {
+    background-color: #FEF6F4;
+    color: #FF7F2D;
+  }
+  &__checked {
+    background-color: #EFFFFA;
+    color: #3CCF97;
+  }
+}

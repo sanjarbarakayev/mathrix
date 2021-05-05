@@ -41,6 +41,7 @@ export const state = () => ({
       name: "French"
     }
   ],
+
   selectedSubjectInfo: {
     subjectName: "",
     subjectImg: ""

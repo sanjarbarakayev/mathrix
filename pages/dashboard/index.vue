@@ -266,6 +266,9 @@
 import { mapMutations, mapState, mapActions } from "vuex";
 import UseApp from "@/components/UseApp";
 export default {
+  components: {
+    UseApp
+  },
   data: () => ({
     activeTab: "subjects",
     user: {
@@ -476,12 +479,6 @@ export default {
       setSubject: "subjects/setSubject"
     })
   },
-  components: {
-    UseApp
-  },
-  mounted() {
-    // this.studentsList = this.$store.state.subjects.subjectsList;
-    // console.log(this.$store.state.subjects.subjectsList)
-  }
+  
 };
 </script>
