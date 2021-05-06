@@ -70,7 +70,12 @@
               <div class="subject__items grid grid-cols-4 grid-rows-3">
                 <div v-for="(subject, index) in subjectsList" :key="index">
                   <nuxt-link
-                    @click="setSubject({subjectName: subject.name, subjectImg: subject.img})"
+                    @click="
+                      setSubject({
+                        subjectName: subject.name,
+                        subjectImg: subject.img
+                      })
+                    "
                     to="/dashboard/chapters"
                   >
                     <div class="subject__item flex flex-col">
@@ -263,7 +268,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState, mapActions } from "vuex";
+import { mapMutations } from "vuex";
 import UseApp from "@/components/UseApp";
 export default {
   components: {
@@ -475,10 +480,11 @@ export default {
 
       e.target.classList.add("_active");
     },
-    ...mapMutations({
-      setSubject: "subjects/setSubject"
-    })
-  },
-
+    ...mapMutations[
+      {
+        setSubject: "subjects/setSubject"
+      }
+    ]
+  }
 };
 </script>
