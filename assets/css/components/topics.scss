@@ -79,6 +79,7 @@
 
   &__item {
     @extend %card-shadow;
+    cursor: pointer;
   }
 
   &__main-title {
