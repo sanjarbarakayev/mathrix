@@ -7,18 +7,18 @@
             >Dashboard</el-breadcrumb-item
           >
           <el-breadcrumb-item :to="{ path: '/dashboard/chapters' }">{{
-            subjectName
+            subjectInfo.name
           }}</el-breadcrumb-item>
-          <el-breadcrumb-item>{{ topicName }}</el-breadcrumb-item>
+          <el-breadcrumb-item>Serial Communication</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
 
       <h2 class="topics__title page-title my-6">
-        {{ topicName }}
+        Serial Communication
       </h2>
 
       <div class="topics__tabs relative py-8 px-20">
-        <img class="topics__img" :src="subjectImg" alt="mathrix-subject" />
+        <img class="topics__img" :src="subjectInfo.img" alt="mathrix-subject" />
         <el-tabs v-model="activeTopicsTab" :stretch="true">
           <el-tab-pane label="Course and exercises" name="exercises">
             <div class="exercises flex mt-8">
@@ -411,6 +411,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import UseApp from "@/components/UseApp.vue";
 export default {
   data: () => ({
@@ -420,6 +421,9 @@ export default {
     topicName: "Serial Communication",
     activeTopicsTab: "exercises",
     sidebarItem: true,
+    subjecId: "",
+    subjectInfo: [],
+
     contents: [
       { title: "Complex numbers", active: true },
       { title: "Trigonometry" },
@@ -563,6 +567,11 @@ export default {
       }
     ]
   }),
+  computed: {
+    ...mapGetters({
+      getSubjectById: "subjects/getSubjectById"
+    })
+  },
   methods: {
     sidebarActive(e) {
       let sidebarElements = document.getElementsByClassName("sidebar__item");
@@ -575,7 +584,10 @@ export default {
       e.target.classList.add("_active");
     }
   },
-  mounted() {},
-  component: { UseApp }
+  mounted() {
+    this.subjectId = this.$route.params.subjectId;
+    this.subjectInfo = this.getSubjectById(this.subjectId);
+  },
+  components: { UseApp }
 };
 </script>

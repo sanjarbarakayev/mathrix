@@ -68,10 +68,7 @@
                     :to="{
                       name: 'dashboard-chapters-topics',
                       params: {
-                        topicName: content.tite,
-                        subjectImg: subjectInfo.img,
-                        subjectName: subjectInfo.name,
-                        contents: contents
+                        subjectId
                       }
                     }"
                   >
