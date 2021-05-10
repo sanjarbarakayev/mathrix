@@ -1,0 +1,37 @@
+.multistep {
+  &__header {
+    border-bottom: 1px solid rgba(54, 165, 147, 0.2);
+  }
+  &__title {
+    @extend %poppins-600;
+    @extend %letter-space-7;
+    font-size: 22px;
+    color: $green-dark;
+  }
+  &__main {
+		width: 800px;
+		margin: 0 auto;
+    flex: 1;
+    margin-bottom: 47px;
+  }
+
+  &__slider .el-progress__text {
+    display: none;
+  }
+  &__slider .el-progress-bar {
+    padding-right: 0;
+  }
+  &__slider .el-progress-bar__outer {
+    background-color: #FDF6CF;
+		height: 10px;
+  }
+
+	&__slider-text {
+		@extend %open-600;
+		@extend %letter-space-1;
+		font-size: 13px;
+		color: $dark;
+	}
+  &__step {
+  }
+}
