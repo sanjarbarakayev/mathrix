@@ -6,7 +6,7 @@
           <el-breadcrumb-item :to="{ path: '/dashboard' }"
             >Dashboard</el-breadcrumb-item
           >
-          <el-breadcrumb-item>{{ chapterName }}</el-breadcrumb-item>
+          <el-breadcrumb-item>{{ subjectInfo.name }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
 
@@ -34,8 +34,12 @@
 
         <div class="chapter__main pl-6">
           <div class="chapter__list relative p-8 mx-8">
-            <h2 class="chapter__title mb-4">{{ chapterName }}</h2>
-            <img class="chapter__img" :src="chapterImg" alt="mathrix-subject" />
+            <h2 class="chapter__title mb-4">{{ subjectInfo.name }}</h2>
+            <img
+              class="chapter__img"
+              :src="subjectInfo.img"
+              alt="mathrix-subject"
+            />
             <div
               class="cahpter__item"
               v-for="(item, i) of chapterItems"
@@ -65,8 +69,8 @@
                       name: 'dashboard-chapters-topics',
                       params: {
                         topicName: content.tite,
-                        subjectImg: chapterImg,
-                        subjectName: chapterName,
+                        subjectImg: subjectInfo.img,
+                        subjectName: subjectInfo.name,
                         contents: contents
                       }
                     }"
@@ -80,19 +84,20 @@
         </div>
       </div>
     </div>
+    <pre>Id: {{ subjectId }}</pre>
     <use-app />
-    <pre>{{ selectedSubjectInfo }}</pre>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import UseApp from "@/components/UseApp.vue";
 export default {
   components: { UseApp },
   data: () => ({
     chapterName: "",
-    chapterImg: null,
     sidebarItem: true,
+    subjectId: "",
     summaries: [
       { title: "Limit of functions", active: true },
       { title: "Bac oblective", active: false },
@@ -124,12 +129,11 @@ export default {
       { title: "Composite functions" },
       { title: "Matrices" },
       { title: "Trigonometry" }
-    ]
+    ],
+    subjectInfo: []
   }),
   computed: {
-    selectedSubjectInfo() {
-      return this.$store.state.subjects.selectedSubjectInfo;
-    }
+    ...mapGetters("subjects", ["getSubjectById"])
   },
   methods: {
     sidebarActive(e) {
@@ -145,9 +149,8 @@ export default {
     }
   },
   mounted() {
-    // this.chapterName = this.$route.params.chapterName;
-    // this.chapterImg = this.$route.params.chapterImg;
-    console.log();
+    this.subjectId = this.$route.params.subjectId;
+    this.subjectInfo = this.getSubjectById(this.subjectId);
   }
 };
 </script>

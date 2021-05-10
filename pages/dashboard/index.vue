@@ -70,13 +70,12 @@
               <div class="subject__items grid grid-cols-4 grid-rows-3">
                 <div v-for="(subject, index) in subjectsList" :key="index">
                   <nuxt-link
-                    @click="
-                      setSubject({
-                        subjectName: subject.name,
-                        subjectImg: subject.img
-                      })
-                    "
-                    to="/dashboard/chapters"
+                    :to="{
+                      name: 'dashboard-chapters',
+                      params: {
+                        subjectId: subject.id
+                      }
+                    }"
                   >
                     <div class="subject__item flex flex-col">
                       <img
