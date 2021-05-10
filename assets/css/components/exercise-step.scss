@@ -1,11 +1,12 @@
 .exercise-step {
-  &__timer {
-  }
+	flex: 1;
+
+
   &__timer-text {
-		@extend %open-400;
-		@extend %letter-space-1;
-		font-size: 14px;
-		color: $grey-light;
+    @extend %open-400;
+    @extend %letter-space-1;
+    font-size: 14px;
+    color: $grey-light;
   }
   &__exrcise {
     @extend %card-shadow;
@@ -26,12 +27,24 @@
     width: 180px;
     height: 50px;
     border-radius: 10px;
-		cursor: pointer;
+    cursor: pointer;
 
     @extend %poppins-600;
     @extend %letter-space-7;
     font-size: 16px;
     color: $green-dark;
+  }
+  &__variant input {
+    display: none;
+  }
+  &__variant label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 0.75em;
+    cursor: pointer;
+    border-radius: 10px;
   }
   &__hint {
     @extend %open-400;
@@ -40,26 +53,116 @@
     color: $grey-dark;
   }
   &__hint span {
-		@extend %open-600;
-		@extend %letter-space-1;
-		color: $green-dark;
-		transition: all 0.5s;
-		cursor: pointer;
+    @extend %open-600;
+    @extend %letter-space-1;
+    color: $green-dark;
+    transition: all 0.5s;
+    cursor: pointer;
   }
-	&__hint span::after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 1px;
-		background-color: $green-dark;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		transition: all 0.5s;
-	}
-	&__hint span:hover::after  {
-		transform: scaleX(0);
-	}
+  &__hint span::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $green-dark;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s;
+  }
+  &__hint span:hover::after {
+    transform: scaleX(0);
+  }
   &__btn {
   }
+  &__explanation {
+    border-top: 1px solid rgba(54, 165, 147, 0.2);
+  }
+	&__explanation-title {
+		@extend %poppins-400;
+		@extend %letter-space-1;
+		font-size: 16px;
+		color: $green-dark;
+	}
+  &__explanation-text {
+    @extend %open-300;
+    @extend %letter-space-1;
+    font-size: 14px;
+    color: $dark;
+  }
+  &__explanation-tip {
+    background: #effffa;
+    border-radius: 10px;
+		padding: 32px 44px 32px 66px;
+  }
+	&__explanation-tip img {
+		position: absolute;
+		left: 16px;
+		top: -25px;
+	}
+	&__explanation-tip p {
+		@extend %open-400;
+		@extend %letter-space-1;
+		font-size: 14px;
+		color: $green-dark;
+		letter-spacing: 2;
+	}
+
+	.exercise-results__btn {
+		width: 240px;
+		padding: 0 !important;
+	}
+
+}
+
+.checked-variant {
+  background-color: $green-dark;
+  color: #fff;
+}
+.is-incorrect {
+  background-color: #f25a2a;
+  color: #fff;
+}
+
+.exercise-results {
+}
+
+.exercise-results {
+	&__main {
+	}
+	&__title {
+		@extend %poppins-600;
+		@extend %letter-space-7;
+		font-size: 32px;
+		color: $green-dark;
+	}
+	&__subtitle {
+		@extend %open-300;
+		@extend %letter-space-1;
+		font-size: 14px;
+		color: $dark;
+	}
+	&__score {
+		@extend %poppins-600;
+		@extend %letter-space-1;
+		font-size: 22px;
+		color: $dark;
+		position: relative;
+		margin-bottom: 100px;
+	}
+	&__score::after {
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: 50%;
+    transform: translateX(-50%);
+		width: 290px;
+		height: 100px;	
+		background-image: url("../img/patterns/exercise-score-pattern.svg");
+		@extend %bg-i;
+	}
+	&__actions {
+	}
+	&__btn {
+	}
 }

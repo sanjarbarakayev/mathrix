@@ -9,19 +9,39 @@ button:focus {
 // GLobal styles
 
 .m-btn-primary {
-  background: $yellow-dark;
-  border-radius: 6px;
+  background: $yellow-dark !important;
+  border-radius: 6px !important;
+  @extend %poppins-600;
+  height: 40px !important;
+  padding: 0px 38px !important;
+  transition: all 0.5s !important;
+  border: none !important;
+
+  &:hover,
+  &:active {
+    background-color: rgba(244, 220, 0, 1) !important;
+  }
+}
+.m-btn-primary.el-button.is-disabled {
+  background-color: #E4E4E4 !important;
+}
+.m-btn-secondary {
+  border: 1px solid $green-dark;
+  color: $green-dark;
+  border-radius: 10px;
   @extend %poppins-600;
   height: 40px;
   padding: 0px 38px;
   transition: all 0.5s;
-
-  &:hover,
-  &:active {
-    background-color: rgba(244, 220, 0, 1);
-  }
 }
-
+.m-btn-secondary:hover {
+  background-color: #DEF9F1;
+}
+.m-btn-secondary:focus {
+  border-width: 2px;
+  background-color: #fff;
+  color: $green-dark;
+}
 .section-btn {
   position: relative;
 
