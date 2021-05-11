@@ -1,13 +1,4 @@
 .exam-modal {
-  &__header {
-  }
-
-  &__close-btn {
-  }
-
-  &__main {
-  }
-
   &__title {
     @extend %poppins-600;
     @extend %letter-space-7;
@@ -47,6 +38,14 @@
 
   &__btn {
     width: 240px;
+  }
+
+  &__action {
+    @extend %card-shadow;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    left: 0;
+    right: 0;
   }
 }
 .exam-question {

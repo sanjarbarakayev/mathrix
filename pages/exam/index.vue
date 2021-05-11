@@ -167,6 +167,9 @@ export default {
     nextStep() {
       this.activeStep++;
       this.percentage += 25;
+      if (this.activeStep > 4) {
+        this.$router.push("/exam/check-answer");
+      }
     }
   },
   mounted() {
