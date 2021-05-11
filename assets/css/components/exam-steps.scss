@@ -1,0 +1,87 @@
+.exam-modal {
+  &__header {
+  }
+
+  &__close-btn {
+  }
+
+  &__main {
+  }
+
+  &__title {
+    @extend %poppins-600;
+    @extend %letter-space-7;
+    font-size: 32px;
+    color: $green-dark;
+  }
+
+  &__subtitle {
+    width: 500px;
+    margin: 0 auto;
+
+    @extend %open-300;
+    @extend %letter-space-1;
+    font-size: 14px;
+    color: $dark;
+    text-align: center;
+  }
+
+  &__btn {
+    width: 240px;
+  }
+}
+
+.exam-timer p {
+  @extend %open-400;
+  @extend %letter-space-1;
+  font-size: 14px;
+  color: $grey-light;
+}
+
+.exam-step {
+  @extend %card-shadow;
+
+  &__questions {
+    list-style-type: decimal;
+  }
+
+  &__btn {
+    width: 240px;
+  }
+}
+.exam-question {
+  &::marker {
+    @extend %poppins-700;
+    @extend %letter-space-1;
+    font-size: 16px;
+    columns: $dark;
+  }
+
+  &__title {
+    @extend %poppins-700;
+    @extend %letter-space-1;
+    font-size: 16px;
+    columns: $dark;
+  }
+
+  &__variants {
+    list-style-type: lower-alpha;
+    @extend %open-300;
+    @extend %letter-space-1;
+    font-size: 14px;
+    color: $dark;
+  }
+
+  &__variant {
+    padding-left: 20px;
+  }
+
+  &__variant::marker {
+    @extend %poppins-600;
+  }
+}
+
+.exam-step__button.m-btn-primary {
+  width: 240px;
+  padding: 10px 0 !important;
+}

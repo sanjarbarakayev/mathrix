@@ -297,6 +297,7 @@
             </button>
           </div>
         </div>
+        <!-- Exercise results -->
         <div class="exercise-results fixed w-screen h-screen inset-0 bg-white container mx-auto py-10" v-if="activeStep > totalSteps">
           <div class="exercise-results__heaeder text-right">
             <button>

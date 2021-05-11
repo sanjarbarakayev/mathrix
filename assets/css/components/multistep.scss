@@ -9,8 +9,8 @@
     color: $green-dark;
   }
   &__main {
-		width: 800px;
-		margin: 0 auto;
+    width: 800px;
+    margin: 0 auto;
     margin-bottom: 47px;
   }
 
@@ -21,16 +21,14 @@
     padding-right: 0;
   }
   &__slider .el-progress-bar__outer {
-    background-color: #FDF6CF;
-		height: 10px;
+    background-color: #fdf6cf;
+    height: 10px;
   }
 
-	&__slider-text {
-		@extend %open-600;
-		@extend %letter-space-1;
-		font-size: 13px;
-		color: $dark;
-	}
-  &__step {
+  &__slider-text {
+    @extend %open-600;
+    @extend %letter-space-1;
+    font-size: 13px;
+    color: $dark;
   }
 }
