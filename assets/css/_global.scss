@@ -23,7 +23,7 @@ button:focus {
   }
 }
 .m-btn-primary.el-button.is-disabled {
-  background-color: #E4E4E4 !important;
+  background-color: #e4e4e4 !important;
 }
 .m-btn-secondary {
   border: 1px solid $green-dark;
@@ -35,13 +35,9 @@ button:focus {
   transition: all 0.5s;
 }
 .m-btn-secondary:hover {
-  background-color: #DEF9F1;
+  background-color: #def9f1;
 }
-.m-btn-secondary:focus {
-  border-width: 2px;
-  background-color: #fff;
-  color: $green-dark;
-}
+
 .section-btn {
   position: relative;
 
@@ -149,7 +145,6 @@ button:focus {
   height: 24px;
 }
 
-
 //Tabs
 
 .el-tabs__item.is-active {
@@ -168,9 +163,19 @@ button:focus {
   @extend %poppins-600;
   @extend %letter-space-1;
   font-size: 16px;
-  color: #B7C2BF !important;
+  color: #b7c2bf !important;
 }
 
-
-
-
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+small,
+li,
+a,
+button {
+  @extend %letter-space-1;
+}
