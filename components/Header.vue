@@ -285,7 +285,7 @@ export default {
       loginModal: false,
       recoveryPasswordModal: false,
       complateRecoveryModal: false,
-      isAuthorized: true
+      isAuthorized: false
     };
   },
   methods: {

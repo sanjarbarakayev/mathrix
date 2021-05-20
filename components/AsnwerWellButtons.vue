@@ -7,18 +7,18 @@
       <button
         :class="{
           'check-answer__actoins-button mx-2': defaultClasses,
-          confirm: isAnsweredWell
+          confirm: confirmAnswer
         }"
-        @click="isAnsweredWell = true"
+        @click="yesAnswer"
       >
         Yes
       </button>
       <button
         :class="{
           'check-answer__actoins-button mx-2': defaultClasses,
-          reject: !isAnsweredWell
+          reject: rejectAnswer
         }"
-        @click="isAnsweredWell = false"
+        @click="noAnswer"
       >
         No
       </button>
@@ -30,7 +30,19 @@
 export default {
   data: () => ({
     defaultClasses: true,
-    isAnsweredWell: null
-  })
+    // isAnsweredWell: null
+    confirmAnswer: null,
+    rejectAnswer: null
+  }),
+  methods: {
+    yesAnswer() {
+      this.confirmAnswer = true;
+      this.rejectAnswer = false;
+    },
+    noAnswer() {
+      this.confirmAnswer = false;
+      this.rejectAnswer = true;
+    }
+  }
 };
 </script>

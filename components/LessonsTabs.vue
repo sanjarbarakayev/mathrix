@@ -11,7 +11,7 @@
             }"
             v-for="(topic, t) of lessonTopics.topics"
             :key="t"
-            @click="changeLesson($event, topic.id)"
+            @click="changeLesson($event, topic.id, topic.type)"
           >
             <div class="tabs-menu__info flex items-center">
               <div class="tabs-menu__img mr-4 relative">
@@ -56,7 +56,7 @@
       </nav>
       <div
         class="lessons-tabs__menu next-topic"
-        v-if="nextTopicId == totalLessonTopics"
+        v-if="nextTopicId != totalLessonTopics + 1"
       >
         <h5 class="lessons-tabs__menu-title">Next topic</h5>
         <nav class="lessons-tabs__menu tabs-menu">
@@ -317,7 +317,11 @@ export default {
     ])
   },
   methods: {
-    changeLesson(event, topicId) {
+    changeLesson(event, topicId, topicType) {
+      if (topicType === "exercise") {
+        this.$router.push("/exercise");
+      }
+
       let currentTarget = event.currentTarget,
         tabItems = document.getElementsByClassName("tabs-menu__item");
 

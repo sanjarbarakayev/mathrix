@@ -1,0 +1,83 @@
+.flashcard {
+  &_step {
+  }
+
+  &__header {
+  }
+
+  &__show-answer {
+    @extend %open-400;
+    font-size: 14px;
+    color: $grey-light;
+  }
+
+  &__list {
+    @extend %open-600;
+    font-size: 16px;
+    color: $green-dark;
+    position: relative;
+    cursor: pointer;
+  }
+  &__list::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $green-dark;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    transition: all 0.5s;
+  }
+  &__list:hover::after {
+    transform: scaleX(0);
+  }
+
+  &__main {
+  }
+
+  &__step {
+    width: 100%;
+    height: 350px;
+    cursor: pointer;
+
+    @extend %poppins-600;
+    font-size: 20px;
+    color: $dark;
+  }
+
+  &__question {
+    @extend %card-shadow;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+  }
+
+  &__answer {
+    @extend %card-shadow;
+    width: 100%;
+    height: 100%;
+    background-color: #effffa;
+  }
+
+  &__actions {
+  }
+  &__actions .el-button:hover {
+    color: $green-dark;
+    border-color: $green-dark;
+    background-color: #def9f1;
+  }
+  &__actions .el-button.is-disabled,
+  &__actions .el-button.is-disabled:focus,
+  &__actions .el-button.is-disabled:hover {
+    color: #c0c4cc !important;
+    cursor: not-allowed;
+    background-image: none;
+    background-color: #fff !important;
+    border-color: #ebeef5 !important;
+  }
+}
+
+.active-answer {
+  background-color: #effffa;
+}

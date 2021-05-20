@@ -26,13 +26,13 @@ button:focus {
   background-color: #e4e4e4 !important;
 }
 .m-btn-secondary {
-  border: 1px solid $green-dark;
-  color: $green-dark;
-  border-radius: 10px;
+  border: 1px solid $green-dark !important;
+  color: $green-dark !important;
+  border-radius: 10px !important;
   @extend %poppins-600;
-  height: 40px;
-  padding: 0px 38px;
-  transition: all 0.5s;
+  height: 40px !important;
+  padding: 0px 38px !important;
+  transition: all 0.5s !important;
 }
 .m-btn-secondary:hover {
   background-color: #def9f1;
@@ -178,4 +178,15 @@ li,
 a,
 button {
   @extend %letter-space-1;
+}
+
+// Transition styles
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
