@@ -10,7 +10,7 @@
             subjectName
           }}</el-breadcrumb-item>
           <el-breadcrumb-item :to="{ path: '/dashboard/chapters/topics' }">{{
-            subjectName
+            chapterName
           }}</el-breadcrumb-item>
           <el-breadcrumb-item>{{ topicName }}</el-breadcrumb-item>
         </el-breadcrumb>

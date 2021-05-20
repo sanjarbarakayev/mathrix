@@ -337,6 +337,14 @@ export default {
       currentTarget.classList.add("active-tab");
     },
     prevLesson() {
+      if (
+        this.currentTopicId < 1 ||
+        this.nextTopicId > this.totalLessonTopics
+      ) {
+        this.currentTopicId = 1;
+        this.nextTopicId = this.totalLessonTopics - 1;
+      }
+
       --this.currentTopicId;
       --this.nextTopicId;
 
@@ -344,6 +352,14 @@ export default {
       this.nextLessonTopics = this.getCurrentLesson(this.nextTopicId);
     },
     nextLesson() {
+      if (
+        this.currentTopicId < 1 ||
+        this.nextTopicId > this.totalLessonTopics
+      ) {
+        this.currentTopicId = 1;
+        this.nextTopicId = this.totalLessonTopics - 1;
+      }
+
       ++this.currentTopicId;
       ++this.nextTopicId;
 

@@ -298,20 +298,41 @@
           </div>
         </div>
         <!-- Exercise results -->
-        <div class="exercise-results fixed w-screen h-screen inset-0 bg-white container mx-auto py-10" v-if="activeStep > totalSteps">
+        <div
+          class="exercise-results fixed w-screen h-screen inset-0 bg-white container mx-auto py-10"
+          v-if="activeStep > totalSteps"
+        >
           <div class="exercise-results__heaeder text-right">
             <button>
-              <img src="@/assets/img/icons/close-icon.svg" alt="close-icon">
+              <img src="@/assets/img/icons/close-icon.svg" alt="close-icon" />
             </button>
           </div>
-          <div class="exercise-results__main flex flex-col items-center justify-center h-full">
-            <img src="@/assets/img/logo/success-logo.svg" alt="success-mathrix mb-2">
+          <div
+            class="exercise-results__main flex flex-col items-center justify-center h-full"
+          >
+            <img
+              src="@/assets/img/logo/success-logo.svg"
+              alt="success-mathrix mb-2"
+            />
             <h2 class="exercise-results__title mt-6">Keep on practicing!</h2>
-            <p class="exercise-results__subtitle mb-8">You did not get the average for this interview</p>
-            <p class="exercise-results__score">{{correctAnswers}}/{{totalSteps}} correct</p>
+            <p class="exercise-results__subtitle mb-8">
+              You did not get the average for this interview
+            </p>
+            <p class="exercise-results__score">
+              {{ correctAnswers }}/{{ totalSteps }} correct
+            </p>
             <div class="exercise-results__actions flex">
-              <button class="exercise-results__btn mx-4 m-btn-secondary" @click="restartExercise">Restart</button>
-              <button class="exercise-results__btn mx-4 m-btn-primary">Go to the next lesson</button>
+              <button
+                class="exercise-results__btn mx-4 m-btn-secondary"
+                @click="restartExercise"
+              >
+                Restart
+              </button>
+              <nuxt-link
+                to="/dashboard/chapters/topics/lessons"
+                class="exercise-results__btn mx-4 m-btn-primary flex items-center justify-center"
+                >Go to the next lesson</nuxt-link
+              >
             </div>
           </div>
         </div>
@@ -403,10 +424,10 @@ export default {
       this.checkedAnswerLabel.classList.remove("checked-variant");
     },
     restartExercise() {
-      this.activeStep = 1
-      this.percentage = 25
-      this.correctAnswers = 0
-      this.incorrectAnswers = 0
+      this.activeStep = 1;
+      this.percentage = 25;
+      this.correctAnswers = 0;
+      this.incorrectAnswers = 0;
     }
   }
 };
