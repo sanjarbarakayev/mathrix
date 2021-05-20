@@ -261,8 +261,9 @@
         </el-tabs>
       </div>
     </div>
-
-    <use-app />
+    <div class="mb-10">
+      <use-app />
+    </div>
   </div>
 </template>
 
@@ -312,58 +313,6 @@ export default {
         totolExam: 4
       }
     ],
-    // subjects: [
-    //   {
-    //     img: require("@/assets/img/subjects/maths.svg"),
-    //     name: "Mathematics",
-    //     link: "/dashboard/maths"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/physical.svg"),
-    //     name: "Physical",
-    //     link: "/dashboard/physical"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/svt.svg"),
-    //     name: "SVT",
-    //     link: "/dashboard/svt"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/history.svg"),
-    //     name: "History",
-    //     link: "/dashboard/history"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/chemistry.svg"),
-    //     name: "Chemistry",
-    //     link: "/dashboard/chemistry"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/numeric.svg"),
-    //     name: "Numeric Science",
-    //     link: "/dashboard/numeric"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/technology.svg"),
-    //     name: "Technology",
-    //     link: "/dashboard/technology"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/philosophy.svg"),
-    //     name: "Philosophy",
-    //     link: "/dashboard/philosophy"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/geographi.svg"),
-    //     name: "Geographi",
-    //     link: "/dashboard/geographi"
-    //   },
-    //   {
-    //     img: require("@/assets/img/subjects/language.svg"),
-    //     name: "French",
-    //     link: "/dashboard/language"
-    //   }
-    // ],
     complatedTasks: [
       {
         complated: 35,

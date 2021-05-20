@@ -81,7 +81,6 @@
         </div>
       </div>
     </div>
-    <pre>Id: {{ subjectId }}</pre>
     <use-app />
   </div>
 </template>
