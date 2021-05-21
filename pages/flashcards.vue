@@ -12,7 +12,7 @@
       </div>
       <div class="multistep__main h-full flex flex-col">
         <!-- Flashcard progress -->
-        <div class="multistep__slider mb-12">
+        <div class="multistep__slider mb-12" v-if="!activeFlashcardsList">
           <p class="multistep__slider-text text-right">
             Step {{ activeStep }}/{{ totalSteps }}
           </p>
@@ -23,7 +23,10 @@
           ></el-progress>
         </div>
         <div class="flashcard">
-          <div class="flashcard__header flex justify-between mb-4">
+          <div
+            class="flashcard__header flex justify-between mb-4"
+            v-if="!activeFlashcardsList"
+          >
             <div class="flashcard__show-answer flex items-center">
               <img
                 src="@/assets/img/icons/exclamation-icon.svg"
@@ -32,12 +35,12 @@
               />
               Click on the map to see the answer
             </div>
-            <div class="flashcard__list">
+            <div class="flashcard__list-text" @click="showFlashcardsList">
               List of flashcards
             </div>
           </div>
           <!-- Flashcard steps -->
-          <div class="flashcard__main">
+          <div class="flashcard__main" v-if="!activeFlashcardsList">
             <!-- First flashcard -->
             <div class="flashcard__step mb-4">
               <transition name="question">
@@ -59,7 +62,10 @@
             </div>
           </div>
           <!-- Flashcard action -->
-          <div class="flashcard__actions flex justify-between mb-4">
+          <div
+            class="flashcard__actions flex justify-between mb-4"
+            v-if="!activeFlashcardsList"
+          >
             <el-button
               type="secondary"
               class="m-btn-secondary flex items-center"
@@ -80,12 +86,33 @@
             </el-button>
           </div>
           <!-- List of flashcards -->
-          <div class="flashcard__list">
-            <div
-              class="flashcard__item"
-              v-for="(flashcard, f) of getFlashcardsList"
-              :key="f"
-            ></div>
+          <div class="flashcards-list" v-if="activeFlashcardsList">
+            <h3 class="flashcards-list__title text-center mt-4">
+              List of flashcards
+            </h3>
+            <p class="flashcards-list__subtitle text-center mb-6">
+              See all flashcards and answers
+            </p>
+            <div class="flashcards-list__items mb-8">
+              <div
+                class="flashcards-list__group flex justify-between"
+                v-for="(flashcard, index) of allFlashcars"
+                :key="index"
+              >
+                <div class="flashcard__question p-10">
+                  {{ flashcard.question }}
+                </div>
+                <div
+                  class="flashcard__answer p-10"
+                  v-html="flashcard.answer"
+                ></div>
+              </div>
+            </div>
+            <div class="flashcards-list__action text-center">
+              <nuxt-link class="m-btn-primary flex items-center justify-center mx-auto" to="/exercise">
+                Go practice
+              </nuxt-link>
+            </div>
           </div>
         </div>
       </div>
@@ -105,7 +132,8 @@ export default {
     currentFlashcard: [],
     allFlashcars: [],
     isAnswerShown: false,
-    isQuestionShown: true
+    isQuestionShown: true,
+    activeFlashcardsList: false
   }),
   computed: {
     ...mapGetters({
@@ -133,6 +161,9 @@ export default {
 
       this.isQuestionShown = true;
       this.isAnswerShown = false;
+    },
+    showFlashcardsList() {
+      this.activeFlashcardsList = true;
     }
   },
   mounted() {

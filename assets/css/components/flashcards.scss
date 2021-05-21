@@ -11,14 +11,14 @@
     color: $grey-light;
   }
 
-  &__list {
+  &__list-text {
     @extend %open-600;
     font-size: 16px;
     color: $green-dark;
     position: relative;
     cursor: pointer;
   }
-  &__list::after {
+  &__list-text::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -29,7 +29,7 @@
     right: 0;
     transition: all 0.5s;
   }
-  &__list:hover::after {
+  &__list-text:hover::after {
     transform: scaleX(0);
   }
 
@@ -80,4 +80,40 @@
 
 .active-answer {
   background-color: #effffa;
+}
+
+.flashcards-list {
+  padding-bottom: 55px;
+  &__title {
+    @extend %poppins-600;
+    font-size: 16px;
+    color: $dark;
+  }
+  &__subtitle {
+    @extend %open-300;
+    font-size: 14px;
+    color: $dark;
+  }
+  &__items {
+  }
+  &__group:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+
+  & .flashcard__question,
+  & .flashcard__answer {
+    flex-basis: 48%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @extend %poppins-500;
+    font-size: 14px;
+    color: $dark;
+  }
+
+  &__action a {
+    width: 200px;
+  }
 }
